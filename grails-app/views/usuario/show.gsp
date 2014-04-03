@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list usuario">
 			
-				<g:if test="${usuarioInstance?.passwd}">
-				<li class="fieldcontain">
-					<span id="passwd-label" class="property-label"><g:message code="usuario.passwd.label" default="Passwd" /></span>
-					
-						<span class="property-value" aria-labelledby="passwd-label"><g:fieldValue bean="${usuarioInstance}" field="passwd"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${usuarioInstance?.usuario}">
 				<li class="fieldcontain">
 					<span id="usuario-label" class="property-label"><g:message code="usuario.usuario.label" default="Usuario" /></span>
 					
 						<span class="property-value" aria-labelledby="usuario-label"><g:fieldValue bean="${usuarioInstance}" field="usuario"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${usuarioInstance?.passwd}">
+				<li class="fieldcontain">
+					<span id="passwd-label" class="property-label"><g:message code="usuario.passwd.label" default="Passwd" /></span>
+					
+						<span class="property-value" aria-labelledby="passwd-label"><g:fieldValue bean="${usuarioInstance}" field="passwd"/></span>
 					
 				</li>
 				</g:if>

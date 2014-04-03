@@ -2,12 +2,30 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'correo', 'error')} ">
-	<label for="correo">
-		<g:message code="alumno.correo.label" default="Correo" />
-		
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'nombre', 'error')} required">
+	<label for="nombre">
+		<g:message code="alumno.nombre.label" default="Nombre" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="correo" value="${alumnoInstance?.correo}"/>
+	<g:textField name="nombre" required="" value="${alumnoInstance?.nombre}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'apPaterno', 'error')} required">
+	<label for="apPaterno">
+		<g:message code="alumno.apPaterno.label" default="Ap Paterno" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="apPaterno" required="" value="${alumnoInstance?.apPaterno}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'apMaterno', 'error')} required">
+	<label for="apMaterno">
+		<g:message code="alumno.apMaterno.label" default="Ap Materno" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="apMaterno" required="" value="${alumnoInstance?.apMaterno}"/>
 
 </div>
 
@@ -20,12 +38,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'nombre', 'error')} ">
-	<label for="nombre">
-		<g:message code="alumno.nombre.label" default="Nombre" />
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'correo', 'error')} ">
+	<label for="correo">
+		<g:message code="alumno.correo.label" default="Correo" />
 		
 	</label>
-	<g:textField name="nombre" value="${alumnoInstance?.nombre}"/>
+	<g:field type="email" name="correo" value="${alumnoInstance?.correo}"/>
 
 </div>
 

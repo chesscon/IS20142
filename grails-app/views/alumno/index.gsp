@@ -24,11 +24,15 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="correo" title="${message(code: 'alumno.correo.label', default: 'Correo')}" />
+						<g:sortableColumn property="nombre" title="${message(code: 'alumno.nombre.label', default: 'Nombre')}" />
+					
+						<g:sortableColumn property="apPaterno" title="${message(code: 'alumno.apPaterno.label', default: 'Ap Paterno')}" />
+					
+						<g:sortableColumn property="apMaterno" title="${message(code: 'alumno.apMaterno.label', default: 'Ap Materno')}" />
 					
 						<g:sortableColumn property="fecha_nac" title="${message(code: 'alumno.fecha_nac.label', default: 'Fechanac')}" />
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'alumno.nombre.label', default: 'Nombre')}" />
+						<g:sortableColumn property="correo" title="${message(code: 'alumno.correo.label', default: 'Correo')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +40,15 @@
 				<g:each in="${alumnoInstanceList}" status="i" var="alumnoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${alumnoInstance.id}">${fieldValue(bean: alumnoInstance, field: "correo")}</g:link></td>
+						<td><g:link action="show" id="${alumnoInstance.id}">${fieldValue(bean: alumnoInstance, field: "nombre")}</g:link></td>
+					
+						<td>${fieldValue(bean: alumnoInstance, field: "apPaterno")}</td>
+					
+						<td>${fieldValue(bean: alumnoInstance, field: "apMaterno")}</td>
 					
 						<td><g:formatDate date="${alumnoInstance.fecha_nac}" /></td>
 					
-						<td>${fieldValue(bean: alumnoInstance, field: "nombre")}</td>
+						<td>${fieldValue(bean: alumnoInstance, field: "correo")}</td>
 					
 					</tr>
 				</g:each>

@@ -23,11 +23,29 @@
 			</g:if>
 			<ol class="property-list alumno">
 			
-				<g:if test="${alumnoInstance?.correo}">
+				<g:if test="${alumnoInstance?.nombre}">
 				<li class="fieldcontain">
-					<span id="correo-label" class="property-label"><g:message code="alumno.correo.label" default="Correo" /></span>
+					<span id="nombre-label" class="property-label"><g:message code="alumno.nombre.label" default="Nombre" /></span>
 					
-						<span class="property-value" aria-labelledby="correo-label"><g:fieldValue bean="${alumnoInstance}" field="correo"/></span>
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${alumnoInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${alumnoInstance?.apPaterno}">
+				<li class="fieldcontain">
+					<span id="apPaterno-label" class="property-label"><g:message code="alumno.apPaterno.label" default="Ap Paterno" /></span>
+					
+						<span class="property-value" aria-labelledby="apPaterno-label"><g:fieldValue bean="${alumnoInstance}" field="apPaterno"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${alumnoInstance?.apMaterno}">
+				<li class="fieldcontain">
+					<span id="apMaterno-label" class="property-label"><g:message code="alumno.apMaterno.label" default="Ap Materno" /></span>
+					
+						<span class="property-value" aria-labelledby="apMaterno-label"><g:fieldValue bean="${alumnoInstance}" field="apMaterno"/></span>
 					
 				</li>
 				</g:if>
@@ -41,11 +59,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${alumnoInstance?.nombre}">
+				<g:if test="${alumnoInstance?.correo}">
 				<li class="fieldcontain">
-					<span id="nombre-label" class="property-label"><g:message code="alumno.nombre.label" default="Nombre" /></span>
+					<span id="correo-label" class="property-label"><g:message code="alumno.correo.label" default="Correo" /></span>
 					
-						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${alumnoInstance}" field="nombre"/></span>
+						<span class="property-value" aria-labelledby="correo-label"><g:fieldValue bean="${alumnoInstance}" field="correo"/></span>
 					
 				</li>
 				</g:if>
