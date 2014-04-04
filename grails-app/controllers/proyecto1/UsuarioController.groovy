@@ -9,6 +9,24 @@ import grails.transaction.Transactional
 class UsuarioController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    
+    def login = {}
+    
+    def doLogin = {
+        def user = Usuario.findByPasswdAndUsuario(params.usuario, params.passwd)
+        if (user) {
+            session.user = user
+            flash.message = "Hola ${user}"
+            redirect(controller:"entry", action:"list")
+        } else {
+            flash.message = "Datos no válidos, inténtalo de nuevo"
+            redirect(action:"login")
+        }
+    }
+    
+    def logout = {
+        flash.message = "Has salido del sistema, $session.user.user"
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
