@@ -1,4 +1,4 @@
-package proyecto1
+    package proyecto1
 
 
 
@@ -11,6 +11,7 @@ class ProfesorController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        
         params.max = Math.min(max ?: 10, 100)
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
