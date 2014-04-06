@@ -20,11 +20,12 @@ class AlumnoController {
     }
 
     def create() {
-        respond new Alumno(params)
+        respond (new Alumno(params) ).new Usuario(params)
     }
 
     @Transactional
     def save(Alumno alumnoInstance) {
+      println alumnoInstance
         if (alumnoInstance == null) {
             notFound()
             return
@@ -34,6 +35,9 @@ class AlumnoController {
             respond alumnoInstance.errors, view:'create'
             return
         }
+        
+        // guadramos el usuario primero
+        alumnoInstance.usuario.save flush:true
 
         alumnoInstance.save flush:true
 

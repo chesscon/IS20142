@@ -6,11 +6,15 @@ class Usuario {
   String passwd;
   // Tipos: 1 -> Alumno; 2-> Profesor; 3 -> Escuela
   int tipo = 1;
+  
+  String role = "Alumno"
+  
+  static transients = ['tipo']
 
   static constraints = {
-      usuario(blank:true, unique: true)
-      passwd(blank:true, password:true)
-      tipo(inList(1, 2, 3))
+      usuario(blank:false, unique: true)
+      passwd(blank:false, password:true)
+      role(inList:["Alumno", "Profesor", "Escuela"])
   }
 
   String toString() {

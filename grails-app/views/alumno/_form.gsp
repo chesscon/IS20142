@@ -1,5 +1,6 @@
 <%@ page import="proyecto1.Alumno" %>
 
+<g:render template="form" contextPath="../usuario" model="['usuarioInstance':alumnoInstance.usuario]" />
 
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'nombre', 'error')} required">
@@ -38,12 +39,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'correo', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'correo', 'error')} required">
 	<label for="correo">
 		<g:message code="alumno.correo.label" default="Correo" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="email" name="correo" value="${alumnoInstance?.correo}"/>
+	<g:field type="email" name="correo" required="" value="${alumnoInstance?.correo}"/>
 
 </div>
 

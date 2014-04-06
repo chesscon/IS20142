@@ -28,6 +28,8 @@
 					
 						<g:sortableColumn property="passwd" title="${message(code: 'usuario.passwd.label', default: 'Passwd')}" />
 					
+						<g:sortableColumn property="tipo" title="${message(code: 'usuario.tipo.label', default: 'Tipo')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +39,8 @@
 						<td><g:link action="show" id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "usuario")}</g:link></td>
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "passwd")}</td>
+					
+						<td>${fieldValue(bean: usuarioInstance, field: "tipo")}</td>
 					
 					</tr>
 				</g:each>
