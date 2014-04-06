@@ -7,13 +7,13 @@ class Profesor {
     String video;
     String grado_academico;
     String correo;
-    String estado = "na"; 
-   
+    String estado = "na";
+    String prueba = "lalalals"
+    
     static constraints = {
         nombres(blank:true)
         correo(blank:true,email:true)
-        
-    }
+   }
     
     
     
