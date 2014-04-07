@@ -8,7 +8,10 @@ class Profesor {
     String grado_academico;
     String correo;
     String estado = "na";
-    String prueba = "lalalals"
+    
+    
+    
+    
     
     static constraints = {
         nombres(blank:true)
