@@ -1,6 +1,6 @@
 package proyecto1
 
-class Alumno {
+class Alumno extends Usuario {
   
   //Usuario usuario;
   String nombre;
@@ -9,7 +9,7 @@ class Alumno {
   String correo;
   Date fecha_nac;
   
-  static belongsTo = [user: Usuario]
+  //static belongsTo = [user: Usuario]
 
   static constraints = {
       nombre(blank:false)
@@ -17,7 +17,7 @@ class Alumno {
       apMaterno(blank:false)
       fecha_nac(blank:false)
       correo(blank:false, email:true)
-      user(validator: {user.esAlumno()})
+      //user(validator: {user.esAlumno()})
   }
   
   String toString() {
@@ -26,7 +26,7 @@ class Alumno {
     "apMaterno: ${apMaterno},\n" +
     "correo: ${correo},\n" +
     "fecha_nac: ${fecha_nac},\n" +
-    "Usuario: ${user},"
+    super.toString()
   }
 
 }

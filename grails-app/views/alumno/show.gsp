@@ -23,6 +23,33 @@
 			</g:if>
 			<ol class="property-list alumno">
 			
+				<g:if test="${alumnoInstance?.usuario}">
+				<li class="fieldcontain">
+					<span id="usuario-label" class="property-label"><g:message code="alumno.usuario.label" default="Usuario" /></span>
+					
+						<span class="property-value" aria-labelledby="usuario-label"><g:fieldValue bean="${alumnoInstance}" field="usuario"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${alumnoInstance?.passwd}">
+				<li class="fieldcontain">
+					<span id="passwd-label" class="property-label"><g:message code="alumno.passwd.label" default="Passwd" /></span>
+					
+						<span class="property-value" aria-labelledby="passwd-label"><g:fieldValue bean="${alumnoInstance}" field="passwd"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${alumnoInstance?.role}">
+				<li class="fieldcontain">
+					<span id="role-label" class="property-label"><g:message code="alumno.role.label" default="Role" /></span>
+					
+						<span class="property-value" aria-labelledby="role-label"><g:fieldValue bean="${alumnoInstance}" field="role"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${alumnoInstance?.nombre}">
 				<li class="fieldcontain">
 					<span id="nombre-label" class="property-label"><g:message code="alumno.nombre.label" default="Nombre" /></span>
@@ -64,15 +91,6 @@
 					<span id="correo-label" class="property-label"><g:message code="alumno.correo.label" default="Correo" /></span>
 					
 						<span class="property-value" aria-labelledby="correo-label"><g:fieldValue bean="${alumnoInstance}" field="correo"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${alumnoInstance?.user}">
-				<li class="fieldcontain">
-					<span id="usuario-label" class="property-label"><g:message code="alumno.user.label" default="Usuario" /></span>
-					
-						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${alumnoInstance?.user?.id}">${alumnoInstance?.user?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

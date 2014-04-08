@@ -1,14 +1,33 @@
 <%@ page import="proyecto1.Alumno" %>
 
-<g:render template="form" contextPath="../usuario"
-    model="[usuarioInstance: alumnoInstance.user]" />
 
-<% alumnoInstance.user = usuarioInstance
-              println "Usuario:"
-              println usuarioInstance
-              println "--Alumno:"
-              println alumnoInstance
-              %>
+
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="alumno.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="usuario" required="" value="${alumnoInstance?.usuario}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'passwd', 'error')} required">
+	<label for="passwd">
+		<g:message code="alumno.passwd.label" default="Passwd" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field type="password" name="passwd" required="" value="${alumnoInstance?.passwd}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'role', 'error')} ">
+	<label for="role">
+		<g:message code="alumno.role.label" default="Role" />
+		
+	</label>
+	<g:select name="role" from="${alumnoInstance.constraints.role.inList}" value="${alumnoInstance?.role}" valueMessagePrefix="alumno.role" noSelection="['': '']"/>
+
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">

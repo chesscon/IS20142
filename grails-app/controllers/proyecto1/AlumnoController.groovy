@@ -20,31 +20,23 @@ class AlumnoController {
     }
 
     def create() {
-        [alumnoInstance:new Alumno(params), usuarioInstance: new Usuario(params) ]
+        respond new Alumno(params)
     }
 
     @Transactional
-    def save(Alumno alumnoInstance, Usuario usuarioInstance) {
-      alumnoInstance.user = usuarioInstance
-      println alumnoInstance
+    def save(Alumno alumnoInstance) {
         if (alumnoInstance == null) {
             notFound()
             return
         }
-        
-        println "Errores:"
-        println alumnoInstance.errors
 
         if (alumnoInstance.hasErrors()) {
             respond alumnoInstance.errors, view:'create'
             return
         }
-        
-        // guadramos el usuario primero
-        alumnoInstance.user.save flush:true
-        println "Intentando guardar..."
+
         alumnoInstance.save flush:true
-        println "ya se guardo..."
+
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Alumno'), alumnoInstance.id])
