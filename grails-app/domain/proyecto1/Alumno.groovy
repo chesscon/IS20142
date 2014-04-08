@@ -9,7 +9,7 @@ class Alumno {
   String correo;
   Date fecha_nac;
   
-  static belongsTo = [usuario: Usuario]
+  static belongsTo = [user: Usuario]
 
   static constraints = {
       nombre(blank:false)
@@ -17,7 +17,7 @@ class Alumno {
       apMaterno(blank:false)
       fecha_nac(blank:false)
       correo(blank:false, email:true)
-      usuario(validator: {usuario.esAlumno()})
+      user(validator: {user.esAlumno()})
   }
   
   String toString() {
@@ -26,7 +26,7 @@ class Alumno {
     "apMaterno: ${apMaterno},\n" +
     "correo: ${correo},\n" +
     "fecha_nac: ${fecha_nac},\n" +
-    "Usuario: ${usuario},"
+    "Usuario: ${user},"
   }
 
 }

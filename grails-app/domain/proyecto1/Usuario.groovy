@@ -18,7 +18,7 @@ class Usuario {
   }
 
   String toString() {
-      usuario
+      "\n \t usuario: ${usuario}"
   }
   
   boolean esAlumno() {

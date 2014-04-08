@@ -25,6 +25,14 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
+            
+            <% alumnoInstance.user = usuarioInstance
+              println "Usuario:"
+              println usuarioInstance
+              println "Alumno:"
+              println alumnoInstance
+              %>
+            
 			<g:form url="[resource:alumnoInstance, action:'save']" >
 				<fieldset class="form">
 					<g:render template="form"/>

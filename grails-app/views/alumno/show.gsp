@@ -68,11 +68,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${alumnoInstance?.usuario}">
+				<g:if test="${alumnoInstance?.user}">
 				<li class="fieldcontain">
-					<span id="usuario-label" class="property-label"><g:message code="alumno.usuario.label" default="Usuario" /></span>
+					<span id="usuario-label" class="property-label"><g:message code="alumno.user.label" default="Usuario" /></span>
 					
-						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${alumnoInstance?.usuario?.id}">${alumnoInstance?.usuario?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${alumnoInstance?.user?.id}">${alumnoInstance?.user?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

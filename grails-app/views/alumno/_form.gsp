@@ -1,7 +1,14 @@
 <%@ page import="proyecto1.Alumno" %>
 
-<g:render template="form" contextPath="../usuario" model="['usuarioInstance':alumnoInstance.usuario]" />
+<g:render template="form" contextPath="../usuario"
+    model="[usuarioInstance: alumnoInstance.user]" />
 
+<% alumnoInstance.user = usuarioInstance
+              println "Usuario:"
+              println usuarioInstance
+              println "--Alumno:"
+              println alumnoInstance
+              %>
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
