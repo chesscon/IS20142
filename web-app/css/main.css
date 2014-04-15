@@ -594,3 +594,10 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+/* OSCAR HC: */
+// LOGIN:
+#loginHeader {
+  float: right;
+  color: #fff;
+}
