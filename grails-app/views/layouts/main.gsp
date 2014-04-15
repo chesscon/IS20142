@@ -20,6 +20,16 @@
 	</head>
 	<body>
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+        
+        <div>
+  <p><g:link class="header-main" controller="user">
+      Sistema de Registro de Inscripciones</g:link></p>
+  <p class="header-sub">Salmones. IS 2014-2</p>
+  <div id="loginHeader">
+    <g:loginControl />
+  </div>
+</div>
+        
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
