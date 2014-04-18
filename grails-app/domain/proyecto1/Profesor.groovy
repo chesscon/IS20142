@@ -8,11 +8,7 @@ class Profesor {
     String grado_academico;
     String correo;
     String estado = "na";
-    
-    
-    
-    
-    
+       
     static constraints = {
         nombres(blank:true)
         correo(blank:true,email:true)
