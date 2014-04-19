@@ -8,15 +8,15 @@ class Profesor {
     String grado_academico;
     String correo;
     String estado = "na";
-       
+    static transients = ['estado']
     static constraints = {
-        nombres(blank:true)
-        correo(blank:true,email:true)
+        nombres(blank:false)
+        apellidoMaterno(blank:false)
+        apellidoPaterno(blank:false)
+        video(blank:false)
+        grado_academico(blank:false)
+        correo(blank:false,email:true)
    }
-    
-    
-    
-    String toString() {
-        nombres
-    }
+     
+   
 }

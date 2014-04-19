@@ -14,19 +14,17 @@ class EscuelaController {
         params.max = Math.min(max ?: 10, 100)
         respond Escuela.list(params), model:[escuelaInstanceCount: Escuela.count()]
     }
-    
-    
-    
-    def show(Escuela escuelaInstance) {
-        respond escuelaInstance
+      
+    def show(Profesor profesorInstance) {
+        respond profesorInstance
     }
 
     def create() {
         respond new Escuela(params)
     }
     
-    def createProf() {
-        respond new Profesor(params)
+    def createProfesor() {
+       respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
 
     @Transactional
