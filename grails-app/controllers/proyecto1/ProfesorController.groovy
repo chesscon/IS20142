@@ -45,7 +45,11 @@ class ProfesorController {
             '*' { respond profesorInstance, [status: CREATED] }
         }
     }
-
+    def aceptar(Profesor profesorInstance){
+        profesorInstance.estado = 'aceptado'
+        respond profesorInstance
+    }
+    
     def edit(Profesor profesorInstance) {
         respond profesorInstance
     }

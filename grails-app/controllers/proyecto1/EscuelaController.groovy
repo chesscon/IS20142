@@ -24,7 +24,12 @@ class EscuelaController {
     }
     
     def createProfesor() {
-       respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+       respond Profesor.findAllByEstadoNotEqual('aceptado'), model:[profesorInstanceCount: Profesor.count()]
+    }
+    
+    def aceptarProfesor(Profesor profesorInstance){
+        profesorInstance.cambiaEstado()
+        
     }
 
     @Transactional

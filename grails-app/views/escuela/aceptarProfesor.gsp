@@ -1,36 +1,40 @@
-<%@ page import="proyecto1.Escuela" %>
+<!--
+  To change this license header, choose License Headers in Project Properties.
+  To change this template file, choose Tools | Templates
+  and open the template in the editor.
+-->
+
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'escuela.label', default: 'Escuela')}" />
+		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-escuela" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#edit-profesor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+                        </ul>
 		</div>
-		<div id="edit-escuela" class="content scaffold-edit" role="main">
+		<div id="edit-profesor" class="content scaffold-edit" role="main">
 			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<g:hasErrors bean="${escuelaInstance}">
+			<g:hasErrors bean="${profesorInstance}">
 			<ul class="errors" role="alert">
-				<g:eachError bean="${escuelaInstance}" var="error">
+				<g:eachError bean="${profesorInstance}" var="error">
 				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:escuelaInstance, action:'update']" method="PUT" >
-				<g:hiddenField name="version" value="${escuelaInstance?.version}" />
+			<g:form url="[resource:profesorInstance, action:'update']" method="PUT" >
+				<g:hiddenField name="version" value="${profesorInstance?.version}" />
 				<fieldset class="form">
-					<g:render template="formac"/>
+					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />

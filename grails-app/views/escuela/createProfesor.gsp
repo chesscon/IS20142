@@ -17,11 +17,10 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-profesor" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1><g:message code="Profesores esperando aceptacion" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -31,16 +30,11 @@
 					
 						<g:sortableColumn property="nombres" title="${message(code: 'profesor.nombres.label', default: 'Nombres')}" />
 					
+                                                <g:sortableColumn property="apellidoPaterno" title="${message(code: 'profesor.apellidoPaterno.label', default: 'Apellido Paterno')}" />
+
 						<g:sortableColumn property="apellidoMaterno" title="${message(code: 'profesor.apellidoMaterno.label', default: 'Apellido Materno')}" />
-					
-						<g:sortableColumn property="apellidoPaterno" title="${message(code: 'profesor.apellidoPaterno.label', default: 'Apellido Paterno')}" />
-					
-						<g:sortableColumn property="video" title="${message(code: 'profesor.video.label', default: 'Video')}" />
-					
-						<g:sortableColumn property="grado_academico" title="${message(code: 'profesor.grado_academico.label', default: 'Gradoacademico')}" />
-					
-						<g:sortableColumn property="correo" title="${message(code: 'profesor.correo.label', default: 'Correo')}" />
-					
+										                                                    
+                                                <g:sortableColumn property="estado" title="${message(code: 'profesor.estado.label', default: 'Estado')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -49,15 +43,11 @@
 					
 						<td><g:link action="show" id="${profesorInstance.id}">${fieldValue(bean: profesorInstance, field: "nombres")}</g:link></td>
 					
-						<td>${fieldValue(bean: profesorInstance, field: "apellidoMaterno")}</td>
-					
-						<td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
-					
-						<td>${fieldValue(bean: profesorInstance, field: "video")}</td>
-					
-						<td>${fieldValue(bean: profesorInstance, field: "grado_academico")}</td>
-					
-						<td>${fieldValue(bean: profesorInstance, field: "correo")}</td>
+                                                <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
+                                                
+                                                <td>${fieldValue(bean: profesorInstance, field: "apellidoMaterno")}</td>
+                                     
+                                                <td>${fieldValue(bean: profesorInstance, field: "estado")}</td>
 					
 					</tr>
 				</g:each>

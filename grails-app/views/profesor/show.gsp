@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+                                <g:if test="${profesorInstance?.apellidoPaterno}">
+				<li class="fieldcontain">
+					<span id="apellidoPaterno-label" class="property-label"><g:message code="profesor.apellidoPaterno.label" default="Apellido Paterno" /></span>
+					
+						<span class="property-value" aria-labelledby="apellidoPaterno-label"><g:fieldValue bean="${profesorInstance}" field="apellidoPaterno"/></span>
+					
+				</li>
+				</g:if> 
+                                
 				<g:if test="${profesorInstance?.apellidoMaterno}">
 				<li class="fieldcontain">
 					<span id="apellidoMaterno-label" class="property-label"><g:message code="profesor.apellidoMaterno.label" default="Apellido Materno" /></span>
@@ -41,15 +50,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${profesorInstance?.apellidoPaterno}">
-				<li class="fieldcontain">
-					<span id="apellidoPaterno-label" class="property-label"><g:message code="profesor.apellidoPaterno.label" default="Apellido Paterno" /></span>
 					
-						<span class="property-value" aria-labelledby="apellidoPaterno-label"><g:fieldValue bean="${profesorInstance}" field="apellidoPaterno"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${profesorInstance?.video}">
 				<li class="fieldcontain">
 					<span id="video-label" class="property-label"><g:message code="profesor.video.label" default="Video" /></span>

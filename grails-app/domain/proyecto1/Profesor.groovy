@@ -7,8 +7,7 @@ class Profesor {
     String video;
     String grado_academico;
     String correo;
-    String estado = "na";
-    static transients = ['estado']
+    String estado = "espera";
     static constraints = {
         nombres(blank:false)
         apellidoMaterno(blank:false)
@@ -16,7 +15,9 @@ class Profesor {
         video(blank:false)
         grado_academico(blank:false)
         correo(blank:false,email:true)
-   }
+    }
      
-   
+    
 }
+   
+
