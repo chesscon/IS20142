@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list profesor">
 			
+				<g:if test="${profesorInstance?.nombres}">
+				<li class="fieldcontain">
+					<span id="nombres-label" class="property-label"><g:message code="profesor.nombres.label" default="Nombres" /></span>
+					
+						<span class="property-value" aria-labelledby="nombres-label"><g:fieldValue bean="${profesorInstance}" field="nombres"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${profesorInstance?.apellidoMaterno}">
 				<li class="fieldcontain">
 					<span id="apellidoMaterno-label" class="property-label"><g:message code="profesor.apellidoMaterno.label" default="Apellido Materno" /></span>
@@ -41,11 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${profesorInstance?.correo}">
+				<g:if test="${profesorInstance?.video}">
 				<li class="fieldcontain">
-					<span id="correo-label" class="property-label"><g:message code="profesor.correo.label" default="Correo" /></span>
+					<span id="video-label" class="property-label"><g:message code="profesor.video.label" default="Video" /></span>
 					
-						<span class="property-value" aria-labelledby="correo-label"><g:fieldValue bean="${profesorInstance}" field="correo"/></span>
+						<span class="property-value" aria-labelledby="video-label"><g:fieldValue bean="${profesorInstance}" field="video"/></span>
 					
 				</li>
 				</g:if>
@@ -59,20 +68,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${profesorInstance?.nombres}">
+				<g:if test="${profesorInstance?.correo}">
 				<li class="fieldcontain">
-					<span id="nombres-label" class="property-label"><g:message code="profesor.nombres.label" default="Nombres" /></span>
+					<span id="correo-label" class="property-label"><g:message code="profesor.correo.label" default="Correo" /></span>
 					
-						<span class="property-value" aria-labelledby="nombres-label"><g:fieldValue bean="${profesorInstance}" field="nombres"/></span>
+						<span class="property-value" aria-labelledby="correo-label"><g:fieldValue bean="${profesorInstance}" field="correo"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${profesorInstance?.video}">
+				<g:if test="${profesorInstance?.estado}">
 				<li class="fieldcontain">
-					<span id="video-label" class="property-label"><g:message code="profesor.video.label" default="Video" /></span>
+					<span id="estado-label" class="property-label"><g:message code="profesor.estado.label" default="Estado" /></span>
 					
-						<span class="property-value" aria-labelledby="video-label"><g:fieldValue bean="${profesorInstance}" field="video"/></span>
+						<span class="property-value" aria-labelledby="estado-label"><g:fieldValue bean="${profesorInstance}" field="estado"/></span>
 					
 				</li>
 				</g:if>
