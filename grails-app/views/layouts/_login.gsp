@@ -6,7 +6,7 @@
 <div id="divLogin" >
   <ul class="nav">
     <li class="dropdown text-right" id="menuLogin">
-      <a class="dropdown-toggle text-right" href="#" data-toggle="dropdown" id="navLogin" style="margin-left: 15em;">Login</a>
+      <a class="dropdown-toggle text-right" href="#" data-toggle="dropdown" id="navLogin" style="margin-left: 60%;">Login</a>
       <div class="dropdown-menu" style="padding:17px;" >
         <g:form action="authenticate" method="post" class="form" controller="usuario" name="formLogin">
           <input name="login" id="username" type="text" placeholder="Username"> 
