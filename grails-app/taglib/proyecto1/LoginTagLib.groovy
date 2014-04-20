@@ -6,7 +6,8 @@ class LoginTagLib {
       out << "Hello ${session.user.usuario} "
       out << """[${link(action:"logout", controller:"usuario"){"Logout"}}]"""
     } else {
-      out << """[${link(action:"login", controller:"usuario"){"Login"}}]"""      
+      //out << """[${link(action:"login", controller:"usuario"){"Login"}}]"""      
+      out << render (template:'/layouts/login')
     }
   }
 }
