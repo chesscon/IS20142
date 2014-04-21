@@ -4,6 +4,10 @@ class Profesor {
     String nombres;
     String apellidoMaterno;
     String apellidoPaterno;
+    Date  fechaDeNacimiento
+    Curso curso
+    String nivel
+    String horario
     String video;
     String grado_academico;
     String correo;
