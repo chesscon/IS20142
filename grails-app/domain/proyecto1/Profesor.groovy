@@ -5,7 +5,7 @@ class Profesor {
     String apellidoMaterno;
     String apellidoPaterno;
     Date  fechaDeNacimiento
-    Curso curso
+    //Curso curso
     String nivel
     String horario
     String video;
