@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-                                <g:if test="${profesorInstance?.apellidoPaterno}">
-				<li class="fieldcontain">
-					<span id="apellidoPaterno-label" class="property-label"><g:message code="profesor.apellidoPaterno.label" default="Apellido Paterno" /></span>
-					
-						<span class="property-value" aria-labelledby="apellidoPaterno-label"><g:fieldValue bean="${profesorInstance}" field="apellidoPaterno"/></span>
-					
-				</li>
-				</g:if> 
-                                
 				<g:if test="${profesorInstance?.apellidoMaterno}">
 				<li class="fieldcontain">
 					<span id="apellidoMaterno-label" class="property-label"><g:message code="profesor.apellidoMaterno.label" default="Apellido Materno" /></span>
@@ -50,7 +41,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${profesorInstance?.apellidoPaterno}">
+				<li class="fieldcontain">
+					<span id="apellidoPaterno-label" class="property-label"><g:message code="profesor.apellidoPaterno.label" default="Apellido Paterno" /></span>
 					
+						<span class="property-value" aria-labelledby="apellidoPaterno-label"><g:fieldValue bean="${profesorInstance}" field="apellidoPaterno"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${profesorInstance?.video}">
 				<li class="fieldcontain">
 					<span id="video-label" class="property-label"><g:message code="profesor.video.label" default="Video" /></span>
@@ -83,6 +82,33 @@
 					<span id="estado-label" class="property-label"><g:message code="profesor.estado.label" default="Estado" /></span>
 					
 						<span class="property-value" aria-labelledby="estado-label"><g:fieldValue bean="${profesorInstance}" field="estado"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesorInstance?.fechaDeNacimiento}">
+				<li class="fieldcontain">
+					<span id="fechaDeNacimiento-label" class="property-label"><g:message code="profesor.fechaDeNacimiento.label" default="Fecha De Nacimiento" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaDeNacimiento-label"><g:formatDate date="${profesorInstance?.fechaDeNacimiento}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesorInstance?.horario}">
+				<li class="fieldcontain">
+					<span id="horario-label" class="property-label"><g:message code="profesor.horario.label" default="Horario" /></span>
+					
+						<span class="property-value" aria-labelledby="horario-label"><g:fieldValue bean="${profesorInstance}" field="horario"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesorInstance?.nivel}">
+				<li class="fieldcontain">
+					<span id="nivel-label" class="property-label"><g:message code="profesor.nivel.label" default="Nivel" /></span>
+					
+						<span class="property-value" aria-labelledby="nivel-label"><g:fieldValue bean="${profesorInstance}" field="nivel"/></span>
 					
 				</li>
 				</g:if>
