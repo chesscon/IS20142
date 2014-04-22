@@ -6,8 +6,8 @@ class Curso {
     Profesor profesor
     Alumno estudiante
     
-   static hasOne = [profesor: Profesor, nivel: String]
-   static belongsTo = Profesor, Alumno
+   //static hasOne = [profesor: Profesor, nivel: String]
+   //static belongsTo = Profesor, Alumno
    
     static constraints = {
         nivel(inList:['Basico','Intermedio','Avanzado','Conversacion'])
