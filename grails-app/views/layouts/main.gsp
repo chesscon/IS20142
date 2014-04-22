@@ -80,11 +80,6 @@
 <script src="${resource(dir: 'js', file: 'jquery-1.8.2.min.js')}" type="text/javascript"></script> 
 <script src="${resource(dir: 'js', file: 'bootstrap.min.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'default.js')}" type="text/javascript"></script>
-
-<script src="${resource(dir: 'js', file: 'camera.min.js')}" type="text/javascript"></script>  
-<script src="${resource(dir: 'js', file: 'jquery.easing.1.3.js')}" type="text/javascript"></script>
-<script src="${resource(dir: 'js', file: 'jquery.mobile.customized.min.js')}" type="text/javascript"></script>
-<script type="text/javascript">function startCamera() {$('#camera_wrap').camera({ fx: 'scrollLeft', time: 2000, loader: 'none', playPause: false, height: '65%', pagination: true });}$(function(){startCamera()});</script>
   
 <r:layoutResources />
 </body>
