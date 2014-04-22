@@ -8,7 +8,9 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class AlumnoController {  
   
-  def beforeInterceptor = [action:this.&auth, except:["index", "create"]]
+  def loginService
+  
+  def beforeInterceptor = [action:this.&auth, except:["index", "create", "save"]]
 
   static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -19,6 +21,7 @@ class AlumnoController {
   
   def auth() {
     if (!session.user) {
+      println "Acceso no autorizado a esta operacion, por favor ingresa primero"
       redirect(controller:"usuario", action:"authenticate")
       return false
     }
@@ -49,12 +52,15 @@ class AlumnoController {
           respond alumnoInstance.errors, view:'create'
           return
       }
-
+      
       alumnoInstance.save flush:true
+      
+      def user = loginService.doLogin(alumnoInstance.usuario, alumnoInstance.passwd)
+      session.user = user
 
       request.withFormat {
           form multipartForm {
-              flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Alumno'), alumnoInstance.id])
+              flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Registro Exitoso de Alumno, con id: '), alumnoInstance.id])
               redirect alumnoInstance
           }
           '*' { respond alumnoInstance, [status: CREATED] }
