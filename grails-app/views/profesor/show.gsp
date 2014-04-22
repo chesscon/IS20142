@@ -77,13 +77,6 @@
           <span class="property-value" aria-labelledby="fechaDeNacimiento-label"><g:formatDate date="${profesorInstance?.fechaDeNacimiento}" /></span>
         </li>
       </g:if>
-
-      <g:if test="${profesorInstance?.horario}">
-        <li class="fieldcontain">
-          <span id="horario-label" class="property-label"><g:message code="profesor.horario.label" default="Horario" /></span>
-          <span class="property-value" aria-labelledby="horario-label"><g:fieldValue bean="${profesorInstance}" field="horario"/></span>
-        </li>
-      </g:if>
       
     </ol>
     

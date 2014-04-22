@@ -21,7 +21,13 @@ class CursoController {
         respond new Curso(params)
     }
     
-    def  findProfesorForCurso(){
+    def  findProfesorForCurso() {
+      //def curso = Curso.get(params.curso)
+      def profesores = Profesor.findAll()
+      render (template: 'profesorSelection',model: [profesores: Profesor.findAll()])
+    }
+    
+    /*def  findProfesorForCurso(){
         def curso = Curso.get(params.curso)
         if (params.nivel == 'Basico'){
             
@@ -42,7 +48,7 @@ class CursoController {
             
     }
     
-    } 
+    } */
    
 
     @Transactional

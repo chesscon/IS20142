@@ -27,23 +27,10 @@
     
 </div>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'horario', 'error')} required">
-	<label for="horario">
-		<g:message code="curso.horario.label" default="Horario" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="horario" required="" value="${cursoInstance?.horario}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'estudiante', 'error')} required">
-	<label for="estudiante">
-		<g:message code="curso.estudiante.label" default="Estudiante" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="estudiante" name="estudiante.id" from="${proyecto1.Alumno.list()}" optionKey="id" required="" value="${cursoInstance?.estudiante?.id}" class="many-to-one"/>
-
+<div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'horario', 'error')} ">
+  <label for="horario">
+      <g:message code="curso.horario.label" default="Horario" />
+  </label>
+  <g:select name="horario" from="${cursoInstance.constraints.horario.inList}" value="${cursoInstance?.horario}" valueMessagePrefix="curso.horario" noSelection="['': '']"/>
 </div>
 

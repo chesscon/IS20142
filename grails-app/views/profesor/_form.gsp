@@ -56,10 +56,4 @@
   <g:datePicker name="fechaDeNacimiento" precision="day"  value="${profesorInstance?.fechaDeNacimiento}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'horario', 'error')} ">
-  <label for="horario">
-      <g:message code="profesor.horario.label" default="Horario" />
-  </label>
-  <g:select name="horario" from="${profesorInstance.constraints.horario.inList}" value="${profesorInstance?.horario}" valueMessagePrefix="profesor.horario" noSelection="['': '']"/>
-</div>
 

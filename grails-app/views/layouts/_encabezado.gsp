@@ -12,9 +12,8 @@
   </div>
 
   <div class="span4 center">
-    <div id="divDatos" class="center" style="padding: 15px; margin-top: 30px; font-size: 1.3em">
-      <div class="center">Datos de Contacto de la escuela</div>
-      <div >Aquí va el teléfono y otros datos ...</div>
+    <div id="divDatos" class="center" style="padding: 15px; margin-top: 30px;">
+      <div><h3>Centro de información Cd. de México 555 555 55</h3></div>
     </div>
   </div>
 </div>  <!-- FIN LOGOTIPO Y SLOGAN -->

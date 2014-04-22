@@ -4,7 +4,7 @@ class Curso {
     String nivel
     String horario
     Profesor profesor
-    Alumno estudiante
+    //Alumno estudiante = null
     
    //static hasOne = [profesor: Profesor, nivel: String]
    //static belongsTo = Profesor, Alumno
@@ -12,7 +12,7 @@ class Curso {
     static constraints = {
         nivel(inList:['Basico','Intermedio','Avanzado','Conversacion'])
         profesor nullable:true
-        horario blank: false
-        estudiante blank: false, unique: true
+        horario(inList: ["Matutino", "Vespertino", "Mixto"],blank:false )
+        //estudiante blank: false, unique: true
     }
 }
