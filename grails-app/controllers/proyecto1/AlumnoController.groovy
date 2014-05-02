@@ -22,6 +22,7 @@ class AlumnoController {
   def auth() {
     if (!session.user) {
       println "Acceso no autorizado a esta operacion, por favor ingresa primero"
+      flash.message = "Para hacer esta tarea, primero debes acceder con tu usuario"
       redirect(controller:"usuario", action:"authenticate")
       return false
     }

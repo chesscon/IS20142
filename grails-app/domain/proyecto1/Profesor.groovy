@@ -1,6 +1,6 @@
 package proyecto1
 
-class Profesor {
+class Profesor extends Usuario {
     String nombres;
     String apellidoMaterno;
     String apellidoPaterno; 
@@ -12,6 +12,7 @@ class Profesor {
     String grado_academico;
     String correo;
     String estado = "espera";
+    
     static constraints = {
         nombres(blank:false)
         apellidoMaterno(blank:false)

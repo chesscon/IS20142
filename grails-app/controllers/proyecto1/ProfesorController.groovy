@@ -7,8 +7,21 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class ProfesorController {
+  
+  def loginService
+  
+  def beforeInterceptor = [action:this.&auth, except:["index", "create", "save", "notFound"]]
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+  static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+  
+  def auth() {
+    if (!session.user) {
+      println "Acceso no autorizado a esta operacion, por favor ingresa primero"
+      flash.message = "Para hacer esta tarea, primero debes acceder con tu usuario"
+      redirect(controller:"usuario", action:"authenticate")
+      return false
+    }
+  }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -36,6 +49,9 @@ class ProfesorController {
         }
 
         profesorInstance.save flush:true
+        
+        def user = loginService.doLogin(profesorInstance.usuario, profesorInstance.passwd)
+        session.user = user
 
         request.withFormat {
             form multipartForm {

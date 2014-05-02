@@ -1,5 +1,31 @@
 <%@ page import="proyecto1.Profesor" %>
 
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'role', 'error')} ">
+	<label for="role">
+		<g:message code="profesor.role.label" default="Role" />
+		
+	</label>
+	<g:select name="role" from="${profesorInstance.constraints.role.inList}" value="${profesorInstance?.role}" valueMessagePrefix="profesor.role" noSelection="['': '']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="profesor.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="usuario" required="" value="${profesorInstance?.usuario}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'passwd', 'error')} required">
+	<label for="passwd">
+		<g:message code="profesor.passwd.label" default="Passwd" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field type="password" name="passwd" required="" value="${profesorInstance?.passwd}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'nombres', 'error')} required">
   <label for="nombres">
     <g:message code="profesor.nombres.label" default="Nombres" />
