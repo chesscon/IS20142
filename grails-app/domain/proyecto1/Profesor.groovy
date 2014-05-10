@@ -2,16 +2,16 @@ package proyecto1
 
 class Profesor extends Usuario {
     String nombres;
-    String apellidoMaterno;
-    String apellidoPaterno; 
+    String apellidoMaterno
+    String apellidoPaterno
     Date  fechaDeNacimiento
     //Curso curso
     String nivel
     //String horario
-    String video = 'video.mp4';
-    String grado_academico;
-    String correo;
-    String estado = "espera";
+    String video = 'video.mp4'
+    String grado_academico
+    String correo
+    String estado = "espera"
     
     static constraints = {
         nombres(blank:false)
@@ -26,7 +26,7 @@ class Profesor extends Usuario {
     }
      
     String toString() {
-      "${nombres} ${apellidoPaterno}  ${apellidoMaterno}"  
+      "${nombres} ${apellidoPaterno}  ${apellidoMaterno}"
   }
 }
    
