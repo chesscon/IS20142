@@ -47,16 +47,19 @@ class ProfesorController {
             respond profesorInstance.errors, view:'create'
             return
         }
-
-        profesorInstance.save flush:true
         
+        profesorInstance.role = "profesor"
+        profesorInstance.tipo = 2
+        profesorInstance.save flush:true
+    
         def user = loginService.doLogin(profesorInstance.usuario, profesorInstance.passwd)
         session.user = user
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'profesorInstance.label', default: 'Profesor'), profesorInstance.id])
-                redirect profesorInstance
+                redirect(controller:"profesor", action:"show", id:profesorInstance.id)
+                //redirect profesorInstance
             }
             '*' { respond profesorInstance, [status: CREATED] }
         }
