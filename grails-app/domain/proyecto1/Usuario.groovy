@@ -2,14 +2,14 @@ package proyecto1
 
 class Usuario {
     
-  String usuario;
-  String passwd;
+  String usuario
+  String passwd
   // Tipos: 1 -> Alumno; 2-> Profesor; 3 -> Escuela
-  int tipo = 1;
+  int tipo  = 1
   
-  String role = "Alumno"
+  String role  = "Alumno"
   
-  static transients = ['tipo']
+  static transients = ['role']
 
   static constraints = {
       usuario(blank:false, unique: true)
