@@ -80,6 +80,35 @@
 <script src="${resource(dir: 'js', file: 'jquery-1.8.2.min.js')}" type="text/javascript"></script> 
 <script src="${resource(dir: 'js', file: 'bootstrap.min.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'default.js')}" type="text/javascript"></script>
+<script>
+  
+  $.ajax(function(){
+    url: "aDondeMandoLosDatos.do",
+    data: {
+      dato1: "valor1",
+      dato2: "valor2"
+    },
+    success: function(xhr){
+      alert("Todo salió bien");
+      console.log(xhr);
+    },
+    fail: function(){
+      alert("Falló la conexión");
+    },
+    complete: function(){
+      alert("Ajax request completed!");
+    }
+  });
+  
+  $(function(){
+    $(".boton-li").click(function(){
+        $(this).addClass("active");
+        $(this).siblings().each(function(s){
+          $(s).removeClass("active");
+        });
+    });
+  });
+</script>
   
 <r:layoutResources />
 </body>
