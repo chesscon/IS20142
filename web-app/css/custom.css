@@ -156,7 +156,31 @@ body{
 
 #divBoxed{margin-top: 51px; }
 
-#divLogo{margin-top: 43px; margin-bottom: 0px; }
+#slider{
+position: relative;
+overflow: hidden;
+top: 20px; 
+margin-bottom: 0px; 
+border:5px solid #990000;
+border-radius: 40px;
+margin: 0 auto;
+padding: 0;}
+
+#slider p {
+position: absolute;
+bottom: 30px;
+left: 0;
+display: block;
+width: 400px;
+height: 24px;
+margin:0;
+padding: 5px 0;
+color: #eee;
+background: red;
+font-size: 22px;
+line-height:22px;
+text-align:center;
+}
 
 #divSiteTitle{font-family: Chewy; font-size: 34px; line-height: 50px; color: rgb(212, 50, 32); text-shadow: none; letter-spacing: 4px; font-weight: bold; font-style: normal; text-transform: uppercase;}
 
