@@ -1,4 +1,4 @@
-<script src="${resource(dir: 'js', file: 'jquery-1.8.2.min.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}" type="text/javascript"></script>
 <script type="text/javascript">
     $(function(){
     $('#slider div:gt(0)').hide();

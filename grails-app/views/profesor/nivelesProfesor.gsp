@@ -8,9 +8,14 @@
 
 <!doctype html>
 <html lang="en">
-<head >
+<head>
+  <meta charset="utf-8">
   <meta name="layout" content="main">
- 
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
     $( "#accordion" ).accordion();
@@ -20,16 +25,11 @@
 <body>
  
 <div id="accordion">
-  <h3>Section 1</h3>
+  <h3>Básico</h3>
   <div>
-    <p>
-    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-    </p>
+    <g:render template="listaProfesores"/>
   </div>
-  <h3>Section 2</h3>
+  <h3>Intermedio</h3>
   <div>
     <p>
     Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
@@ -38,7 +38,7 @@
     suscipit faucibus urna.
     </p>
   </div>
-  <h3>Section 3</h3>
+  <h3>Avanzado</h3>
   <div>
     <p>
     Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
@@ -52,7 +52,7 @@
       <li>List item three</li>
     </ul>
   </div>
-  <h3>Section 4</h3>
+  <h3>Conversación</h3>
   <div>
     <p>
     Cras dictum. Pellentesque habitant morbi tristique senectus et netus
