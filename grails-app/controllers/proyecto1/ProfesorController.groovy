@@ -68,7 +68,15 @@ class ProfesorController {
         profesorInstance.estado = 'aceptado'
         respond profesorInstance
     }
-    
+    /*
+     * 
+     * Despliega los profesores de cierto nivel
+     * @param nivel - el nivel solicitado 
+    */
+    def nivelesProfesor() {
+       respond model:[profesorInstanceList: Profesor.findAllByNivelNotEqual('aceptado')]
+    }
+  
     def edit(Profesor profesorInstance) {
         respond profesorInstance
     }

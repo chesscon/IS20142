@@ -76,8 +76,11 @@
     </div>
 </div>
 <br /><br /><br />
-
-<script src="${resource(dir: 'js', file: 'jquery-1.8.2.min.js')}" type="text/javascript"></script> 
+<meta charset="utf-8">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
 <script src="${resource(dir: 'js', file: 'bootstrap.min.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'default.js')}" type="text/javascript"></script>
 <script>
