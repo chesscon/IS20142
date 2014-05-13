@@ -3,9 +3,9 @@
   To change this template file, choose Tools | Templates
   and open the template in the editor.
 -->
-
-<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="proyecto1.Profesor" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -23,58 +23,51 @@
         </script>
     </head>
     <body>
+    
+    <div id="accordion">
+        <h3>Básico</h3>
         <div>
-            <g:if test="${profesorInstance?.nombres}">
-                <li class="fieldcontain">
-                    <span id="nombres-label" class="property-label"><g:message code="profesor.nombres.label" default="Nombres" /></span>
-                    <span class="property-value" aria-labelledby="nombres-label"><g:fieldValue bean="${profesorInstance}" field="nombres"/></span>
-                </li>
-            </g:if>
+            <g:render template="listaProfesores"/>
         </div>
-        <div id="accordion">
-            <h3>Básico</h3>
-            <div>
-                <g:render template="listaProfesores"/>
-            </div>
-            <h3>Intermedio</h3>
-            <div>
-                <p>
-                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-                    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-                    suscipit faucibus urna.
-                </p>
-            </div>
-            <h3>Avanzado</h3>
-            <div>
-                <p>
-                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-                    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-                    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-                </p>
-                <ul>
-                    <li>List item one</li>
-                    <li>List item two</li>
-                    <li>List item three</li>
-                </ul>
-            </div>
-            <h3>Conversación</h3>
-            <div>
-                <p>
-                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-                    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-                    mauris vel est.
-                </p>
-                <p>
-                    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                    inceptos himenaeos.
-                </p>
-            </div>
+        <h3>Intermedio</h3>
+        <div>
+            <p>
+                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                suscipit faucibus urna.
+            </p>
         </div>
+        <h3>Avanzado</h3>
+        <div>
+            <p>
+                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+            </p>
+            <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+            </ul>
+        </div>
+        <h3>Conversación</h3>
+        <div>
+            <p>
+                Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                mauris vel est.
+            </p>
+            <p>
+                Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                inceptos himenaeos.
+            </p>
+        </div>
+    </div>
 
 
-    </body>
+</body>
 </html>
