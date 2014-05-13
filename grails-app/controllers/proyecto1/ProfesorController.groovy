@@ -74,7 +74,7 @@ class ProfesorController {
      * @param nivel - el nivel solicitado 
     */
     def nivelesProfesor() {
-       respond Profesor.findAllByNivel('lalo'), model:[profesorInstanceCount: Profesor.count()]
+       respond model:[profesorInstanceList: Profesor.findAllByNivelNotEqual('aceptado')]
     }
   
     def edit(Profesor profesorInstance) {
