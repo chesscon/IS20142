@@ -149,67 +149,29 @@ img {max-width:100%;height:auto;width:auto;-moz-box-sizing:border-box;-webkit-bo
 
 
 
-body{
-  background-image: url(../images/subtle_stripes.png); 
-  background-color: rgb(181, 181, 181); 
-  background-repeat: repeat repeat;}
+body{background-image: url(subtle_stripes.png); background-color: rgb(181, 181, 181); background-repeat: repeat repeat;}
 
 #divBoxed{margin-top: 51px; }
 
-#slider{
-position: relative;
-overflow: hidden;
-top: 20px; 
-margin-bottom: 0px; 
-border:5px solid #990000;
-border-radius: 40px;
-margin: 0 auto;
-padding: 0;}
-
-#slider p {
-position: absolute;
-bottom: 30px;
-left: 0;
-display: block;
-width: 400px;
-height: 24px;
-margin:0;
-padding: 5px 0;
-color: #eee;
-background: red;
-font-size: 22px;
-line-height:22px;
-text-align:center;
+#divLogo{
+  margin-top: 43px;
+  margin-left: 3em;
+  margin-bottom: 0px;
 }
 
-#sliderq{
-position: relative;
-overflow: hidden;
-top: 20px; 
-margin-bottom: 0px; 
-border:5px solid #990000;
-border-radius: 40px;
-margin: 0 auto;
-padding: 0;}
-
-#sliderq p {
-position: absolute;
-bottom: 30px;
-left: 0;
-display: block;
-width: 400px;
-height: 24px;
-margin:0;
-padding: 5px 0;
-color: #eee;
-background: red;
-font-size: 22px;
-line-height:22px;
-text-align:center;
+#divDatosEscuela{
+  margin-top: 43px;
+  margin-bottom: 20px; 
+  border: solid 2px blue; 
+  padding: 15px; 
+  font-size: 1.3em
 }
 
-
-#divSiteTitle{font-family: Chewy; font-size: 34px; line-height: 50px; color: rgb(212, 50, 32); text-shadow: none; letter-spacing: 4px; font-weight: bold; font-style: normal; text-transform: uppercase;}
+#divSiteTitle{
+  font-family: Chewy; 
+  font-size: 34px; 
+  line-height: 50px; 
+  color: rgb(212, 50, 32); text-shadow: none; letter-spacing: 4px; font-weight: bold; font-style: normal; text-transform: uppercase;}
 
 #divTagLine{color: rgb(150, 150, 150); line-height: 22px; text-transform: lowercase; letter-spacing: 4px; font-size: 13px; padding-left: 2px; padding-right: 2px; background-color: transparent; text-shadow: none; font-family: Abel; font-weight: normal; font-style: normal; text-decoration: initial;}
 
