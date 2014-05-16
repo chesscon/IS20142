@@ -2,12 +2,11 @@ package proyecto1
 
 class Alumno extends Usuario {
   
-  //Usuario usuario;
-  String nombre;
-  String apPaterno;
-  String apMaterno;
-  String correo;
-  Date fecha_nac;
+  String nombre
+  String apPaterno
+  String apMaterno
+  String correo
+  Date fecha_nac
   
   //static belongsTo = [user: Usuario]
 

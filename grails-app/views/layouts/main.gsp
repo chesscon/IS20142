@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><g:layoutTitle default="Escuela de Ingles"/></title>
+    <title> Escuela de Inglés - <g:layoutTitle default=" "/></title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema de registro de inscripciones para una escuela de inglés">
     <meta name="author" content="Salmones 2014">
@@ -64,7 +65,7 @@
               Indica en que parte (seccion) del sitio se encuentra el usuario
             -->
         <div class="breadcrumbs">
-          <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Simple</span>
+          <a href="${createLink(uri: '/')}">Inicio</a> &nbsp;/&nbsp; <span style="font-size: 1.5em;"><g:layoutTitle default="-"/></span>
         </div>
 
         <g:layoutBody/>

@@ -14,16 +14,17 @@
 <!-- CHESSCON
 DIV para LOGOTIPO y Slogan de la escuela
 -->
-  <div class="row-fluid" style="background-image: url(${createLinkTo(dir: 'images', file: 'banner_index.jpg')});
-  background-repeat: no-repeat;
-  margin-top: 15px;">
+  <div class="row-fluid" 
+  style="margin-top: 20px;
+  padding-bootom: 60px;">
+    <img src="${createLinkTo(dir: 'images', file: 'banner_index.jpg')}" style="position: absolute; z-index: -1; left:0; top: 2em; width: 100%; height:100px" />
 
     <div class="span7">
         <!--<img src="${createLinkTo(dir: 'images', file: 'banner_index.jpg')}">-->
 
       <div id="divLogo">
-        <a href="index.html" id="divSiteTitle">Logo Tipo Escuela</a><br />
-        <a href="index.html" id="divTagLine">Escuela de Inglés ...</a>
+        <a href="${createLink(uri: '/')}" id="divSiteTitle">Logo Tipo Escuela</a><br />
+        <a href="${createLink(uri: '/')}" id="divTagLine">Escuela de Inglés ...</a>
       </div>
 
     </div>
@@ -61,7 +62,7 @@ DIV para LOGOTIPO y Slogan de la escuela
 
 <div class="row-fluid">
   <div class="span12">
-    <div class="nav span3 pull-right">
+    <div class="nav pull-right text-right">
       <g:loginControl />
     </div>
   </div>
