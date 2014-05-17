@@ -9,6 +9,7 @@
       onFinished: function (event, currentIndex) { 
           $( "#formAlumno" ).submit();
         },
+       startIndex: 1,
       labels: {
         cancel: "Cancelar",
         current: "Paso Actual:",
@@ -24,9 +25,14 @@
 </script>
 
 <div id="wizard">
-  <h2>First Step</h2>
+  <h2 id="firstStep">Tipo de Usuario</h2>
   <section>
     <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'role', 'error')} ">
+  
+  <input type="radio" value="1"> Profesor
+  
+  <input type="radio" value="2"> Alumno
+      
   <label for="role">
     <g:message code="alumno.role.label" default="Role" />
 
@@ -62,7 +68,7 @@
 </div>
   </section>
 
-  <h2>Second Step</h2>
+  <h2 id="sndStep">Datos de Usuario</h2>
   <section>
     <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'nombre', 'error')} required">
   <label for="nombre">
@@ -101,7 +107,7 @@
 </div>
   </section>
 
-  <h2>Third Step</h2>
+  <h2>Datos Personales</h2>
   <section>
     <p>Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo, 
       pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat. 
@@ -109,7 +115,7 @@
       venenatis.</p>
   </section>
 
-  <h2>Forth Step</h2>
+  <h2>Elegir curso</h2>
   <section>
     <p>Quisque at sem turpis, id sagittis diam. Suspendisse malesuada eros posuere mauris vehicula vulputate. Aliquam sed sem tortor. 
       Quisque sed felis ut mauris feugiat iaculis nec ac lectus. Sed consequat vestibulum purus, imperdiet varius est pellentesque vitae. 
