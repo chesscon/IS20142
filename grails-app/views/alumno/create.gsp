@@ -4,11 +4,7 @@
     <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'alumno.label', default: 'Alumno')}" />
     <title><g:message code="default.create.label" args="[entityName]" /></title>
-
-    <link href="${resource(dir: 'css', file: 'smart_wizard.css')}" rel="stylesheet" type="text/css">    
-    
-    <script src="${resource(dir: 'js', file: 'jquery.smartWizard-2.0.min.js')}" type="text/javascript"></script>
-    
+ 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'mainJQuerySteps.css')}">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery.steps.css')}">
     
