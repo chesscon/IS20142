@@ -54,15 +54,15 @@ DIV para LOGOTIPO y Slogan de la escuela
   </div>
   </div>-->  <!-- FIN LOGOTIPO Y SLOGAN -->
 
-<div class="row-fluid">
+<!--<div class="row-fluid">
   <div class="span12">
     <div id="contentInnerSeparator"></div>
   </div>
-</div>
+</div>-->
 
 <div class="row-fluid">
   <div class="span12">
-    <div class="nav pull-right text-right">
+    <div class="nav pull-right text-right" style="margin-bottom: 0px;">
       <g:loginControl />
     </div>
   </div>
@@ -74,10 +74,10 @@ DIV para LOGOTIPO y Slogan de la escuela
   MARGEN de separación entre el encabezado (logotipo y menu)
   y el contenido de la pagina
 -->
-<div class="row-fluid">
+<!--<div class="row-fluid">
   <div class="span12">
     <div id="contentInnerSeparator"></div>
   </div>
-</div>
+</div>-->
 
 </header>
