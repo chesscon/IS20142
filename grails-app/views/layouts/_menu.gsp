@@ -6,14 +6,15 @@
     <div class="span12">
         <div id="divMenuRight">
             <nav class="navbar">
-                <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
+                <button type="button"
+                class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
                     MENÚ <span class="icon-chevron-down icon-white"></span>
                 </button>
 
                 <div class="nav-collapse collapse">
                     <ul class="nav nav-pills ddmenu">
 
-                        <li class="dropdown"><a href="${createLink(uri: '/')}">Inicio</a></li>
+                        <li class="dropdown active"><a href="${createLink(uri: '/')}">Inicio</a></li>
                         <li class="dropdown">
                             <a href="${createLink(controller: 'profesor')}" class="dropdown-toggle">Nuestros Cursos  <b class="caret"></b></a>
                             <ul class = "dropdown-menu">
@@ -44,7 +45,6 @@
                                 <li><a href = "${createLink(controller: 'curso',action: 'create')}">Crear Curso</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown active"><a href="${createLink(controller: 'usuario', action:'authenticate')}">Login</a></li>
                     </ul>
                 </div>
             </nav>
