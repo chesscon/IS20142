@@ -64,8 +64,11 @@
               RUTA DE NAVEGACION
               Indica en que parte (seccion) del sitio se encuentra el usuario
             -->
-        <div class="breadcrumbs">
-          <a href="${createLink(uri: '/')}">Inicio</a> &nbsp;/&nbsp; <span style="font-size: 1.5em;"><g:layoutTitle default="-"/></span>
+        <div id="breadcrumbs2">
+          <ol class="breadcrumb">
+            <li>Inicio</li>
+            <li class="active" style="font-size: 1.5em;"><g:layoutTitle default="-"/></li>
+          </ol>
         </div>
 
         <g:layoutBody/>
