@@ -5,7 +5,7 @@ class Alumno extends Usuario {
   String nombre
   String apPaterno
   String apMaterno
-  String correo
+  //String correo
   Date fecha_nac
   
   //static belongsTo = [user: Usuario]
