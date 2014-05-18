@@ -109,3 +109,45 @@
   </section>
 
 </div>                      
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#formUsuario').validate(
+  {
+    rules: {
+      usuario: {
+        minlength: 4,
+        required: true
+      },
+      passwd: {
+        minlength: 3,
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      }
+    }
+  });
+});
+
+$(document).ready(function() {
+    $.extend(jQuery.validator.messages, {
+        required: "Este campo es obligatorio.",
+        remote: "Please fix this field.",
+        email: "Por favor introduce una dirección de correo valida.",
+        url: "Por favor ingresa una URL válida.",
+        date: "Ingresa una fecha válida.",
+        dateISO: "Please enter a valid date (ISO).",
+        number: "Introduce un número válido.",
+        digits: "Ingresa solo dígitos.",
+        creditcard: "Please enter a valid credit card number.",
+        equalTo: "Ingresa el mismo valor.",
+        accept: "Please enter a value with a valid extension.",
+        maxlength: $.validator.format("El número de carácteres permitos máximo son {0}."),
+        minlength: $.validator.format("Por favor ingresa al menos {0} carácteres."),
+        rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
+        range: $.validator.format("Please enter a value between {0} and {1}."),
+        max: $.validator.format("Please enter a value less than or equal to {0}."),
+        min: $.validator.format("Please enter a value greater than or equal to {0}.")
+    });
