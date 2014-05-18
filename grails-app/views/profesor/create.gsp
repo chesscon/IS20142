@@ -5,20 +5,11 @@
     <g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
     <title><g:message code="default.create.label" args="[entityName]" /></title>
     
-    <link href="${resource(dir: 'css', file: 'smart_wizard.css')}" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'mainJQuerySteps.css')}">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery.steps.css')}">  
     
-    <script src="${resource(dir: 'js', file: 'jquery.smartWizard-2.0.min.js')}" type="text/javascript"></script>
-    
-    <script type="text/javascript">
-    $(document).ready(function(){
-    	// Smart Wizard 	
-  		$('#wizard').smartWizard();
-      
-      function onFinishCallback(){
-        $('#wizard').smartWizard('showMessage','Finish Clicked');
-      }     
-		});
-</script>
+    <script src="${resource(dir: 'js', file: 'jquery.steps.js')}"></script>
+    <script src="${resource(dir: 'js', file: 'jqBootstrapValidation.js')}"></script>
     
   </head>
   <body>  
@@ -36,12 +27,9 @@
         </ul>
       </g:hasErrors>
       
-      <g:form url="[resource:profesorInstance, action:'save']" >
+      <g:form url="[resource:profesorInstance, action:'save']" id="formProfe" >
         <fieldset class="form">
             <g:render template="form"/>
-        </fieldset>
-        <fieldset class="buttons">
-            <g:submitButton name="create" class="save" value="${message(code: 'default.button.registro.label', default: 'Enviar Datos')}" />
         </fieldset>
     </g:form>
       
