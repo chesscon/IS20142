@@ -4,7 +4,8 @@ class Curso {
     String nivel
     String horario
     Profesor profesor
-    //Alumno estudiante = null
+    Alumno estudiante = null
+    int calificacion
     
    //static hasOne = [profesor: Profesor, nivel: String]
    //static belongsTo = Profesor, Alumno
