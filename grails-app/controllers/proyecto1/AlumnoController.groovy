@@ -39,7 +39,19 @@ class AlumnoController {
   }
 
   def create() {
-      respond new Alumno(params)
+    Alumno alumno = new Alumno(params)
+    alumno.tipo = 1
+    //println "controller alumno: "
+    if (session.userTmp) {
+      //println session.userTmp
+      //println "correo:" + session.userTmp.correo
+      
+      alumno.usuario = session.userTmp.usuario
+      alumno.passwd = session.userTmp.passwd
+      alumno.correo = session.userTmp.correo
+    }
+    //println "controller alumno ---- "
+    respond alumno
   }
 
   @Transactional
@@ -61,8 +73,10 @@ class AlumnoController {
 
       request.withFormat {
           form multipartForm {
-              flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Registro Exitoso de Alumno, con id: '), alumnoInstance.id])
-              redirect alumnoInstance
+              flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Registro Exitoso de Alumno')])
+              
+              redirect(controller:"curso", action:"create" )
+              //redirect alumnoInstance
           }
           '*' { respond alumnoInstance, [status: CREATED] }
       }
