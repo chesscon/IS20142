@@ -4,13 +4,13 @@ class Usuario {
     
   String usuario
   String passwd
-  String email
+  String correo
   // Tipos: 1 -> Alumno; 2-> Profesor; 3 -> Escuela
   int tipo  = 1
   
   String role  = "Alumno"
   
-  static transients = ['role', 'email']
+  static transients = ['role']
 
   static constraints = {
       usuario(blank:false, unique: true)
