@@ -77,13 +77,13 @@
       </g:hasErrors>
     </div>
     
-    <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'email', 'error')} required control-group">
+    <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'correo', 'error')} required control-group">
       <label for="correo" class="control-label">
         <g:message code="alumno.correo.label" default="Correo" />
         <span class="required-indicator">*</span>
       </label>
       <div class="controls">
-      <g:field type="text" name="email" required="" value="${usuarioInstance?.email}" 
+      <g:textField name="correo" required="" value="${usuarioInstance?.correo}" 
         data-validator-required-message="Por favor complete este campo"/>
       </div>
     </div>
@@ -118,7 +118,7 @@ $(document).ready(function() {
         minlength: 3,
         required: true
       },
-      email: {
+      correo: {
         required: true,
         email: true
       }

@@ -11,6 +11,12 @@
     <script src="${resource(dir: 'js', file: 'jquery.steps.js')}"></script>
     <script src="${resource(dir: 'js', file: 'jqBootstrapValidation.js')}"></script>
     
+    <style>
+      .wizard > .content {
+        min-height: 20em !important;
+      }
+    </style>
+    
   </head>
   <body>
 
