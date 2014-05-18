@@ -9,6 +9,7 @@
       onFinished: function (event, currentIndex) { 
           $( "#formAlumno" ).submit();
         },
+      forceMoveForward: true,
        startIndex: 1,
       labels: {
         cancel: "Cancelar",
@@ -25,7 +26,7 @@
 </script>
 
 <div id="wizard">
-  <h2 id="firstStep">Tipo de Usuario</h2>
+  <h2 id="firstStep">Datos de Usuario</h2>
   <section>
     <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'role', 'error')} ">
   
@@ -38,15 +39,6 @@
 
   </label>
   <g:select name="role" from="${alumnoInstance.constraints.role.inList}" value="${alumnoInstance?.role}" valueMessagePrefix="alumno.role" noSelection="['': '']"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'correo', 'error')} required">
-  <label for="correo">
-    <g:message code="alumno.correo.label" default="Correo" />
-    <span class="required-indicator">*</span>
-  </label>
-  <g:field type="email" name="correo" required="" value="${alumnoInstance?.correo}"/>
-
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'usuario', 'error')} required">

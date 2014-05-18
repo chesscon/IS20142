@@ -30,10 +30,7 @@
       <g:form url="[resource:alumnoInstance, action:'save']" id="formAlumno" >
         <fieldset class="form">
           <g:render template="form"/>
-        </fieldset>
-        <fieldset class="buttons">
-          <g:submitButton name="create" class="save" value="${message(code: 'default.button.registro.label', default: 'Enviar Datos')}" />
-        </fieldset>
+        </fieldset>        
       </g:form>
     </div>
   </body>
