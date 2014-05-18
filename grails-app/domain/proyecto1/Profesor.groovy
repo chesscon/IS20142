@@ -10,7 +10,7 @@ class Profesor extends Usuario {
     //String horario
     String video = 'video.mp4'
     String grado_academico
-    String correo
+    //String correo
     String estado = "espera"
     
     static constraints = {
