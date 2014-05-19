@@ -47,7 +47,7 @@
       </label>
       <div class="controls">
         <g:select name="nivel" from="${cursoInstance.constraints.nivel.inList}" 
-        optionValue="${cursoInstance?.nivel}" noSelection="['null':'Selecciona un nivel']"
+        optionValue="${cursoInstance?.nivel}" noSelection="['':'Selecciona un nivel']"
         onchange="${remoteFunction (controller: 'curso',
                                     action: 'findProfesorForCurso',
                                     params: '"nivel=" + this.value',
