@@ -81,8 +81,11 @@ class CursoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'cursoInstance.label', default: 'Curso'), cursoInstance.id])
-                redirect cursoInstance
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'cursoInstance.label', default: 'Curso'), cursoInstance.id])
+                //redirect cursoInstance
+                flash.message  = "Se ha registrado tu solicitud para el curso. Pronto nos pondremos en contacto."
+                redirect(controller:"usuario", action:"login")
+                
             }
             '*' { respond cursoInstance, [status: CREATED] }
         }
