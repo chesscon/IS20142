@@ -73,8 +73,8 @@ class AlumnoController {
 
       request.withFormat {
           form multipartForm {
-              flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Registro Exitoso de Alumno')])
-              
+              //flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Registro Exitoso de Alumno')])
+              flash.message  = "Registro Exitoso de Alumno"
               redirect(controller:"curso", action:"create" )
               //redirect alumnoInstance
           }
