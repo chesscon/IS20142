@@ -23,28 +23,28 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="${createLink(controller: 'alumno')}" class="dropdown-toggle">Alumno <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
+                            <a href="${createLink(controller: 'alumno')}" class="dropdown-toggle">Conocenos <b ></b></a>
+                            <!--<ul class="dropdown-menu">
                                 <li class="dropdown">
                                     <a href = "${createLink(controller: 'alumno',action: 'create')}">Registrar Alumno</a>    
                                 </li>
-                            </ul>
-                        <li class="dropdown">
+                            </ul>-->
+                        <!--<li class="dropdown">
                             <a href="${createLink(controller: 'profesor')}" class="dropdown-toggle">Profesor <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="${createLink(controller: 'profesor',action: 'index')}">Lista de Profesores</a></li>
                                 <li><a href = "${createLink(controller: 'profesor',action: 'create')}">Registrar Profesor</a></li>
                                 <li><a href="${createLink(controller: 'profesor',action: 'edit')}">Editar</a></li>
                             </ul>
-                        </li>
-
+                        </li>-->
+<!--
                         <li class="dropdown">
                             <a href="${createLink(controller: 'escuela')}" class="dropdown-toggle">Escuela <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href = "${createLink(controller: 'escuela',action: 'createProfesor')}">Lista de Prosores en espera de ser aceptados</a></li>
                                 <li><a href = "${createLink(controller: 'curso',action: 'create')}">Crear Curso</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>
