@@ -26,7 +26,9 @@
   </head>
   <body>
     <div class="row-fluid">
-
+      <g:if test="${flash.message}">
+              <h2 style="color: #09F; text-align: center;"><div class="message" role="status">${flash.message}</div></h2>
+			</g:if>
       <div class="span12">
         <div id="headerSeparator"></div>
 
@@ -81,7 +83,7 @@
                 inscribirte con los mejores profesores!</div><br />
               <div id="divHeaderLine4">
                 <!--<a class="btn btn-large btn-secondary" href="#">Ver horarios</a> -->
-                <a class="btn btn-large btn-primary" href="${createLink(controller: 'alumno',action: 'create')}">Registrate Ahora!</a>
+                <a class="btn btn-large btn-primary" href="${createLink(controller: 'usuario',action: 'create')}">Registrate Ahora!</a>
               </div>
             </div>
           </div>
