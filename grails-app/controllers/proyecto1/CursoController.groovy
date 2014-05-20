@@ -6,21 +6,23 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class CursoController {
   
-  def loginService
+    def loginService
+    
+    def mailService
   
-  //def beforeInterceptor = [action:this.&auth, except:["index", "show", "create", "save"]]
-  def beforeInterceptor = [action:this.&auth, only:["create", "save", "update", "delete"]]
+    //def beforeInterceptor = [action:this.&auth, except:["index", "show", "create", "save"]]
+    def beforeInterceptor = [action:this.&auth, only:["create", "save", "update", "delete"]]
 
-  static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
   
-  def auth() {
-    if (!session.user) {
-      println "Acceso no autorizado a esta operacion, por favor ingresa primero"
-      flash.message = "Para hacer esta tarea, primero debes acceder con tu usuario"
-      redirect(controller:"usuario", action:"authenticate")
-      return false
+    def auth() {
+        if (!session.user) {
+            println "Acceso no autorizado a esta operacion, por favor ingresa primero"
+            flash.message = "Para hacer esta tarea, primero debes acceder con tu usuario"
+            redirect(controller:"usuario", action:"authenticate")
+            return false
+        }
     }
-  }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -32,33 +34,35 @@ class CursoController {
     }
 
     def create() {
-        respond new Curso(params)
+        Curso curso = new Curso(params)
+        //println "Usuario: " + session.user.usuario
+        respond curso
     }
     
     def  findProfesorForCurso() {
-      //def curso = Curso.get(params.curso)
-      def profesores = Profesor.findAll()
-      render (template: 'profesorSelection',model: [profesores: Profesor.findAll()])
+        //def curso = Curso.get(params.curso)
+        def profesores = Profesor.findAll()
+        render (template: 'profesorSelection',model: [profesores: Profesor.findAll()])
     }
     
     /*def  findProfesorForCurso(){
-        def curso = Curso.get(params.curso)
-        if (params.nivel == 'Basico'){
+    def curso = Curso.get(params.curso)
+    if (params.nivel == 'Basico'){
             
-             def profesores = Profesor.findAllByNivelLike("Basico")
-            render (template: 'profesorSelection',model: [profesores: Profesor.findAllByNivelLike("Basico")])
+    def profesores = Profesor.findAllByNivelLike("Basico")
+    render (template: 'profesorSelection',model: [profesores: Profesor.findAllByNivelLike("Basico")])
      
     } else if (params.nivel== 'Intermedio'){
         
-            def profesores = Profesor.findAllByNivelLike("Intermedio")
-            render (template: 'profesorSelection', model: [profesores: Profesor.findAllByNivelLike("Intermedio")])
+    def profesores = Profesor.findAllByNivelLike("Intermedio")
+    render (template: 'profesorSelection', model: [profesores: Profesor.findAllByNivelLike("Intermedio")])
     } else if (params.nivel=='Avanzado'){
         
-            def profesores = Profesor.findAllByNivelLike("Avanzado")
-            render (template : 'profesorSelection', model : [profesores: Profesor.findAllByNivelLike("Avanzado")])
+    def profesores = Profesor.findAllByNivelLike("Avanzado")
+    render (template : 'profesorSelection', model : [profesores: Profesor.findAllByNivelLike("Avanzado")])
     } else if (params.nivel== "Conversacion"){
-            def profesores = Profesor.findAllByNivelLike("Conversacion")
-            render (template : 'profesorSelection', model : [profesores: Profesor.findAllByNivelLike("Conversacion")])
+    def profesores = Profesor.findAllByNivelLike("Conversacion")
+    render (template : 'profesorSelection', model : [profesores: Profesor.findAllByNivelLike("Conversacion")])
             
     }
     
@@ -67,6 +71,8 @@ class CursoController {
 
     @Transactional
     def save(Curso cursoInstance) {
+        //println "SAVE CURSO:"
+        //println cursoInstance
         if (cursoInstance == null) {
             notFound()
             return
@@ -76,8 +82,42 @@ class CursoController {
             respond cursoInstance.errors, view:'create'
             return
         }
+        
+        cursoInstance.estudiante = Alumno.findByUsuario(session.user.usuario)
 
         cursoInstance.save flush:true
+        
+        Profesor profe = cursoInstance.profesor
+        Alumno alum = cursoInstance.estudiante
+        
+
+        // ${profe.nombres} ${profe.apellidoMaterno} 
+        //  ${profe.apellidoPaterno}
+
+        /*String texto = "Estimado Profesor, :\n"
+            + "El alumno: " + ${alum.nombre} + " " + ${alum.apPaterno}
+            + " " + ${alum.apMaterno}
+            + "ha solicitado el curso de nivel " + ${cursoInstance.nivel} 
+            + "en el horario " + ${cursoInstance.horario} + ", por favor pongase"
+            + " en contacto con el alumno a su correo: " + ${alum.correo} 
+            + " y en su caso confirme en la pagina de la escuela la aprobacion o rechazo"
+            + "del curso \n Reciba un cordial Saludo!\n"
+            + "Atentamente: Escuela de Ingles!";
+        */       
+        
+        mailService.sendMail {
+            to profe.correo
+            from "salmones.20142@gmail.com"
+            subject "Solicitud de Curso"
+            body "Estimado Profesor, :\n\n\
+               El alumno: ${alum.nombre} ${alum.apPaterno} ${alum.apMaterno}  \n\
+              ha solicitado el curso de nivel: ${cursoInstance.nivel} \n\
+             en el horario: ${cursoInstance.horario}, \n\
+              por favor pongase en contacto con el alumno a su correo: ${alum.correo} \n\
+              y en su caso confirme en la pagina de la escuela la aprobacion o rechazo del curso \n\
+             Reciba un cordial Saludo!\n\n\
+            Atentamente: Escuela de Ingles!"
+        }
 
         request.withFormat {
             form multipartForm {

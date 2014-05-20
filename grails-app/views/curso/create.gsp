@@ -3,7 +3,7 @@
   <head>
     <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'curso.label', default: 'Curso')}" />
-    <title><g:message code="default.create.label" args="[entityName]" /></title>
+    <title>Inscribir Curso</title>
     
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'mainJQuerySteps.css')}">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery.steps.css')}">
@@ -32,7 +32,7 @@
         </ul>
       </g:hasErrors>
         
-      <g:form url="[resource:cursoInstance, action:'save']" id="formCurso" >
+        <g:form url="[resource:cursoInstance, action:'save']" id="formCurso" >
         <fieldset class="form">
           <g:render template="form"/>
         </fieldset>
@@ -40,6 +40,7 @@
           <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
         </fieldset>
       </g:form>
+        
     </div>
   </body>
 </html>

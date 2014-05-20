@@ -17,4 +17,13 @@ class Curso {
         horario(inList: ["Matutino", "Vespertino", "Mixto"],blank:false )
         //estudiante blank: false, unique: true
     }
+    
+    String toString() {
+        """nivel: ${nivel},\n""" +
+    """horario: ${horario},\n""" +
+    "Profesor: ${profesor},\n" +
+    "estudiante: ${estudiante},\n" +
+    "calificacion: ${calificacion},\n"
+    }
+    
 }
