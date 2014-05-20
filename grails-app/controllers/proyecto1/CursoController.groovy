@@ -41,8 +41,9 @@ class CursoController {
     
     def  findProfesorForCurso() {
         //def curso = Curso.get(params.curso)
-        def profesores = Profesor.findAll()
-        render (template: 'profesorSelection',model: [profesores: Profesor.findAll()])
+        def nivel = params.nivel
+        def profes = profesores = Profesor.findAllByEstadoLikeAndNivelLike("aceptadp", nivel)
+        render (template: 'profesorSelection',model: [profesores: profes ])
     }
     
     /*def  findProfesorForCurso(){
@@ -109,7 +110,7 @@ class CursoController {
             to profe.correo
             from "salmones.20142@gmail.com"
             subject "Solicitud de Curso"
-            body "Estimado Profesor, :\n\n\
+            body "Estimado Profesor: ${profe.nombres} ${profe.apellidoMaterno} ${profe.apellidoPaterno},\n\n\
                El alumno: ${alum.nombre} ${alum.apPaterno} ${alum.apMaterno}  \n\
               ha solicitado el curso de nivel: ${cursoInstance.nivel} \n\
              en el horario: ${cursoInstance.horario}, \n\
