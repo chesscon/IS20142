@@ -3,10 +3,9 @@ import proyecto1.Usuario
 import proyecto1.Alumno
 import proyecto1.Profesor
 
-import com.lowagie.text.DocumentException;
-import org.xhtmlrenderer.pdf.ITextRenderer;
-
 class BootStrap {
+    
+  def pdfRenderingService
   
   def mailService
 
@@ -21,7 +20,16 @@ class BootStrap {
       new Profesor(usuario:"profe",passwd:"pass", nombres:"Profe1", tipo:2, role:"Profesor",
       apellidoPaterno:"Ap Paterno", apellidoMaterno:"Ap Materno", correo: "salmones.20142@gmail.com",
       fechaDeNacimiento:new Date(), nivel:"Basico", grado_academico:"grado").save()
+  
+        //pdfRenderingService.render()
+        
+        // Render to a file
+new File("constancia.pdf").withOutputStream { outputStream ->
+    pdfRenderingService.render([template: "/layouts/constancia"], outputStream)
+}
     
+        //renderPdf(template: "/layouts/constancia", filename: "constancia.pdf")
+        
     /*
     String inputFile = "grails-app/views/layouts/constancia.html";
         String url = new File(inputFile).toURI().toURL().toString();
