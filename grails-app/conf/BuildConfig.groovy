@@ -61,6 +61,8 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.1'
         
         compile ":mail:1.0.5"
+        
+        compile ":rendering:1.0.0"
 
         //compile ":class-diagram:0.5.2"
 
