@@ -35,10 +35,10 @@ class ProfesorController {
     def create() {
         Profesor profe = new Profesor(params)
         profe.tipo = 2
-        //println "controller alumno: "
+        println "controller alumno: "
         if (session.userTmp) {
-            //println session.userTmp
-            //println "correo:" + session.userTmp.correo
+            println session.userTmp
+            println "correo:" + session.userTmp.correo
       
             profe.usuario = session.userTmp.usuario
             profe.passwd = session.userTmp.passwd
@@ -59,8 +59,9 @@ class ProfesorController {
             return
         }
         
-        profesorInstance.role = "profesor"
-        profesorInstance.tipo = 2
+        //profesorInstance.role = "profesor"
+        //profesorInstance.tipo = 2
+        
         profesorInstance.save flush:true
     
         def user = loginService.doLogin(profesorInstance.usuario, profesorInstance.passwd)
@@ -70,7 +71,7 @@ class ProfesorController {
             form multipartForm {
                 //flash.message = message(code: 'default.created.message', args: [message(code: 'profesorInstance.label', default: 'Profesor'), profesorInstance.id])
                 flash.message  = "Registro Exitoso como Profesor!"
-                redirect(controller:"profesor", action:"show", id:profesorInstance.id)
+                redirect(action:"show", id:profesorInstance.id)
                 //redirect profesorInstance
             }
             '*' { respond profesorInstance, [status: CREATED] }
