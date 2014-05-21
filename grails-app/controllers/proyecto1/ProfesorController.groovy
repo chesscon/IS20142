@@ -33,7 +33,18 @@ class ProfesorController {
     }
 
     def create() {
-        respond new Profesor(params)
+        Profesor profe = new Profesor(params)
+        profesor.tipo = 2
+        //println "controller alumno: "
+        if (session.userTmp) {
+            //println session.userTmp
+            //println "correo:" + session.userTmp.correo
+      
+            profe.usuario = session.userTmp.usuario
+            profe.passwd = session.userTmp.passwd
+            profe.correo = session.userTmp.correo
+        }
+        respond profe
     }
 
     @Transactional
@@ -57,7 +68,8 @@ class ProfesorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'profesorInstance.label', default: 'Profesor'), profesorInstance.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'profesorInstance.label', default: 'Profesor'), profesorInstance.id])
+                flash.message  = "Registro Exitoso como Profesor!"
                 redirect(controller:"profesor", action:"show", id:profesorInstance.id)
                 //redirect profesorInstance
             }
