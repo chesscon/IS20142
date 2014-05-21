@@ -7,7 +7,7 @@ import grails.transaction.Transactional
 class CursoController {
   
     def loginService
-    
+    def pdfRenderingService
     def mailService
   
     //def beforeInterceptor = [action:this.&auth, except:["index", "show", "create", "save"]]
@@ -46,28 +46,17 @@ class CursoController {
         render (template: 'profesorSelection',model: [profesores: profes ])
     }
     
-    /*def  findProfesorForCurso(){
-    def curso = Curso.get(params.curso)
-    if (params.nivel == 'Basico'){
-            
-    def profesores = Profesor.findAllByNivelLike("Basico")
-    render (template: 'profesorSelection',model: [profesores: Profesor.findAllByNivelLike("Basico")])
-     
-    } else if (params.nivel== 'Intermedio'){
-        
-    def profesores = Profesor.findAllByNivelLike("Intermedio")
-    render (template: 'profesorSelection', model: [profesores: Profesor.findAllByNivelLike("Intermedio")])
-    } else if (params.nivel=='Avanzado'){
-        
-    def profesores = Profesor.findAllByNivelLike("Avanzado")
-    render (template : 'profesorSelection', model : [profesores: Profesor.findAllByNivelLike("Avanzado")])
-    } else if (params.nivel== "Conversacion"){
-    def profesores = Profesor.findAllByNivelLike("Conversacion")
-    render (template : 'profesorSelection', model : [profesores: Profesor.findAllByNivelLike("Conversacion")])
-            
+    def constancia() {
+        def file = new File("constancia.pdf").withOutputStream { outputStream ->
+            pdfRenderingService.render([template: "/layouts/constancia"], outputStream)
+        }    
+        response.setContentType("application/octet-stream")
+        response.setHeader("Content-disposition", "attachment;filename=${file.getName()}")
+
+        response.outputStream << file.newInputStream()
+       
+        return
     }
-    
-    } */
    
 
     @Transactional
@@ -90,21 +79,6 @@ class CursoController {
         
         Profesor profe = cursoInstance.profesor
         Alumno alum = cursoInstance.estudiante
-        
-
-        // ${profe.nombres} ${profe.apellidoMaterno} 
-        //  ${profe.apellidoPaterno}
-
-        /*String texto = "Estimado Profesor, :\n"
-            + "El alumno: " + ${alum.nombre} + " " + ${alum.apPaterno}
-            + " " + ${alum.apMaterno}
-            + "ha solicitado el curso de nivel " + ${cursoInstance.nivel} 
-            + "en el horario " + ${cursoInstance.horario} + ", por favor pongase"
-            + " en contacto con el alumno a su correo: " + ${alum.correo} 
-            + " y en su caso confirme en la pagina de la escuela la aprobacion o rechazo"
-            + "del curso \n Reciba un cordial Saludo!\n"
-            + "Atentamente: Escuela de Ingles!";
-        */       
         
         mailService.sendMail {
             to profe.correo

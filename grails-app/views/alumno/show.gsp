@@ -101,6 +101,10 @@
                     <div class="span12">
                       <div class="nav pull-right text-right" style="margin-bottom: 0px;">
                         <g:solicitudCurso />
+                        
+                        
+                        
+                        <p><g:link action="constancia" controller="curso">descargar Constancia</g:link></p>
                       </div>
                     </div>
                   </div>
