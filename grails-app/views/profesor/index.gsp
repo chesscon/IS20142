@@ -6,7 +6,7 @@
         <meta name="layout" content="main">
         <g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
-        <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.ccs')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.css')}" type="text/css">
     </head>
     <body>
         <div id="list-profesor" class="content scaffold-list" role="main">
