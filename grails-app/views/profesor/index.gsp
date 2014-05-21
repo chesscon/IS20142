@@ -2,42 +2,34 @@
 <%@ page import="proyecto1.Profesor" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
-	<body>
-      <div id="list-profesor" class="content scaffold-list" role="main">
-        <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-        <g:if test="${flash.message}">
-          <div class="message" role="status">${flash.message}</div>
-        </g:if>
-        <table>
-        <thead>
-              <tr>
-                <g:sortableColumn property="nombres" title="${message(code: 'profesor.nombres.label', default: 'Nombres')}" />
-                <g:sortableColumn property="apellidoPaterno" title="${message(code: 'profesor.apellidoPaterno.label', default: 'Apellido Paterno')}" />
-                <g:sortableColumn property="apellidoMaterno" title="${message(code: 'profesor.apellidoMaterno.label', default: 'Apellido Materno')}" />
-                <g:sortableColumn property="nivel" title="${message(code: 'profesor.nivel.label', default: 'Nivel')}" />
-                <g:sortableColumn property="grado_academico" title="${message(code: 'profesor.grado_academico.label', default: 'Gradoacademico')}" />
-              </tr>
-            </thead>
-            <tbody>
-              <g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
-                <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                  <td><g:link action="show" id="${profesorInstance.id}">${fieldValue(bean: profesorInstance, field: "nombres")}</g:link></td>
-                  <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
-                  <td>${fieldValue(bean: profesorInstance, field: "apellidoMaterno")}</td>
-                  <td>${fieldValue(bean: profesorInstance, field: "nivel")}</td>
-                  <td>${fieldValue(bean: profesorInstance, field: "grado_academico")}</td>
-                </tr>
-              </g:each>
-            </tbody>
-          </table>
-          <div class="pagination">
-              <g:paginate total="${profesorInstanceCount ?: 0}" />
-          </div>
-      </div>
-	</body>
+    <head>
+        <meta name="layout" content="main">
+        <g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
+        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.ccs')}" type="text/css">
+    </head>
+    <body>
+        <div id="list-profesor" class="content scaffold-list" role="main">
+            <g:if test="${flash.message}">
+                <div class="message" role="status">${flash.message}</div>
+            </g:if>
+            <table>
+
+                <tbody>
+                    <g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                            <td><g:link action="show" id="${profesorInstance.id}">${fieldValue(bean: profesorInstance, field: "nombres")}</g:link></td>
+                            <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
+                            <td>${fieldValue(bean: profesorInstance, field: "apellidoMaterno")}</td>
+                            <td>${fieldValue(bean: profesorInstance, field: "nivel")}</td>
+                            <td>${fieldValue(bean: profesorInstance, field: "grado_academico")}</td>
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <g:paginate total="${profesorInstanceCount ?: 0}" />
+            </div>
+        </div>
+    </body>
 </html>
