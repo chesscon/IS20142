@@ -49,14 +49,6 @@ DIV para LOGOTIPO y Slogan de la escuela
   </div>
 </div>-->
 
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="nav pull-right text-right" style="margin-bottom: 0px;">
-                <g:loginControl />
-            </div>
-        </div>
-    </div>
-
     <g:render template="/layouts/menu" />
 
 <!-- CHESSCON

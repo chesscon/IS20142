@@ -3,7 +3,7 @@
   Aquí esta todo lo correspondiente al menú que aparece arriba a la derecha
 -->
 <div class="row-fluid">
-    <div class="span12">
+    <div class="span9">
         <div id="divMenuRight">
             <nav class="navbar">
                 <button type="button"
@@ -53,4 +53,11 @@
             </nav>
         </div>
     </div>
+    
+    <div class="span3">
+            <div class="nav pull-right text-right" style="margin-top: 20px; margin-bottom: 0px;">
+                <g:loginControl />
+            </div>
+        </div>
+    
 </div> <!-- FIN MENU -->

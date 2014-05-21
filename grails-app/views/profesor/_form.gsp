@@ -29,6 +29,61 @@
   <h2 id="sndStep">Datos de Usuario</h2>
   <section>
     Datos de Usuario ...
+    <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'tipo', 'error')} required control-group">
+      <label for="tipo" class="control-label">
+        <g:message code="usuario.tipo.label" default="Tipo" />
+      </label>
+      <div class="controls">
+      <g:select name="tipo"
+      from="${['Alumno', 'Profesor']}"
+      value="${profesorInstance?.role}" 
+      keys="${[1,2,3]}" />
+      </div>
+    </div>
+    
+    <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'usuario', 'error')} required control-group">
+      <label for="usuario" class="control-label">
+        <g:message code="usuario.usuario.label" default="Usuario" />
+        <span class="required-indicator">*</span>
+      </label>
+      <div class="controls">
+      <g:textField name="usuario" required="" value="${profesorInstance?.usuario}" 
+        data-validator-required-message="Por favor complete este campo"/>
+      </div>
+      <g:hasErrors bean="${profesorInstance}" field="usuario">
+        <g:eachError bean="${profesorInstance}" var="error" field="usuario">
+          <g:message error="${error}"/>
+        </g:eachError>
+      </g:hasErrors>
+
+    </div>
+
+    <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'passwd', 'error')} required control-group">
+      <label for="passwd" class="control-label">
+        <g:message code="usuario.passwd.label" default="Contraseña" />
+        <span class="required-indicator">*</span>
+      </label>
+      <div class="controls">
+      <g:field type="password" name="passwd" required="" value="${profesorInstance?.passwd}"
+        data-validator-required-message="Por favor complete este campo"/>
+      </div>
+      <g:hasErrors bean="${profesorInstance}" field="passwd">
+        <g:eachError bean="${profesorInstance}" var="error" field="passwd">
+          <g:message error="${error}"/>
+        </g:eachError>
+      </g:hasErrors>
+    </div>
+    
+    <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'correo', 'error')} required control-group">
+      <label for="correo" class="control-label">
+        <g:message code="alumno.correo.label" default="Correo" />
+        <span class="required-indicator">*</span>
+      </label>
+      <div class="controls">
+      <g:textField name="correo" required="" value="${profesorInstance?.correo}" 
+        data-validator-required-message="Por favor complete este campo"/>
+      </div>
+    </div>
   </section>
 
   <h2>Datos Personales</h2>
@@ -61,16 +116,6 @@
       </label>
       <div class="controls">
         <g:textField name="apellidoMaterno" required="" value="${profesorInstance?.apellidoMaterno}"/>
-      </div>
-    </div>
-
-    <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'correo', 'error')} required control-group">
-      <label for="correo" class="control-label">
-        <g:message code="profesor.correo.label" default="Correo" />
-        <span class="required-indicator">*</span>
-      </label>
-      <div class="controls">
-        <g:field type="email" name="correo" required="" value="${profesorInstance?.correo}"/>
       </div>
     </div>
 
