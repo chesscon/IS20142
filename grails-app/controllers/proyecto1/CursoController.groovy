@@ -42,7 +42,7 @@ class CursoController {
     def  findProfesorForCurso() {
         //def curso = Curso.get(params.curso)
         def nivel = params.nivel
-        def profes = profesores = Profesor.findAllByEstadoLikeAndNivelLike("aceptadp", nivel)
+        def profes = Profesor.findAllByEstadoLikeAndNivelLike("aceptado", nivel)
         render (template: 'profesorSelection',model: [profesores: profes ])
     }
     

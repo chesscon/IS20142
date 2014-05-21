@@ -1,42 +1,7 @@
 <%@ page import="proyecto1.Curso" %>
 
-<script>
-  $(function () {
-  $("#wizard").steps({
-  headerTag: "h2",
-  bodyTag: "section",
-  transitionEffect: "slideLeft",
-  onFinished: function (event, currentIndex) { 
-  $( "#formCurso" ).submit();
-  },
-  onStepChanging: function (event, currentIndex) { 
-  if (currentIndex == 1) {
-  $( "#formCurso" ).submit();
-  }
-  },
-  startIndex: 2,
-  forceMoveForward: true,
-  labels: {
-  cancel: "Cancelar",
-  current: "Paso Actual:",
-  pagination: "Paginacion",
-  finish: "Inscribirse",
-  next: "Siguiente",
-  previous: "Anterior",
-  loading: "Cargando ..."
-  }
-  });
-
-  });
-</script>
-
-<div id="wizard">
-  <h2 id="firstStep">Datos de Usuario</h2>
-  <section>
-  </section>
-  <h2 id="firstStep">Datos personales</h2>
-  <section>
-  </section>
+<div id="form-wizard">
+  
   <h2 id="firstStep">Elegir Curso</h2>
   <section>
 
@@ -51,8 +16,13 @@
         onchange="${remoteFunction (controller: 'curso',
                                     action: 'findProfesorForCurso',
                                     params: '"nivel=" + this.value',
-                                    update: 'profesorSelection')}" /> 
+                                    update: 'profesorSelection')}" />
       </div>
+      <g:hasErrors bean="${cursoInstance}" field="nivel">
+            <g:eachError bean="${cursoInstance}" var="error" field="nivel">
+                <g:message error="${error}"/>
+            </g:eachError>
+        </g:hasErrors>
 
     </div>
     
@@ -65,6 +35,11 @@
         value="${cursoInstance?.horario}" 
         valueMessagePrefix="curso.horario" noSelection="['null': 'Selecciona un horario']"/>
       </div>
+      <g:hasErrors bean="${cursoInstance}" field="horario">
+            <g:eachError bean="${cursoInstance}" var="error" field="horario">
+                <g:message error="${error}"/>
+            </g:eachError>
+        </g:hasErrors>
     </div>
 
     <div id="profesorSelection" class="fieldcontain required control-group">
@@ -78,6 +53,11 @@
         </select>
       </div>
     </div>
+    <g:hasErrors bean="${cursoInstance}" field="profesor">
+            <g:eachError bean="${cursoInstance}" var="error" field="profesor">
+                <g:message error="${error}"/>
+            </g:eachError>
+        </g:hasErrors>
   </section> 
 </div>
 

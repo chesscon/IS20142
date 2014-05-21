@@ -2,6 +2,8 @@ package login
 
 import grails.transaction.Transactional
 import proyecto1.Usuario
+import proyecto1.Curso
+import proyecto1.Alumno
 
 @Transactional
 class LoginService {
@@ -18,7 +20,8 @@ class LoginService {
     }
   }
 
-    def serviceMethod() {
-
+    def getCurso(userAlum) {
+        def curso = Curso.findByEstudiante(Alumno.findByUsuario(userAlum))
+        return curso
     }
 }

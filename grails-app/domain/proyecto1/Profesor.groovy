@@ -11,7 +11,7 @@ class Profesor extends Usuario {
     String video = 'video.mp4'
     String grado_academico = 'constancia.pdf'
     //String correo
-    String estado = "aceptado" // espera se asgin en el controller, en save
+    String estado = 'espera' // espera se asgin en el controller, en save
     
     static constraints = {
         nombres(blank:false)

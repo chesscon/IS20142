@@ -17,40 +17,37 @@ class BootStrap {
       apPaterno:"Ap Paterno", apMaterno:"Ap Materno", correo: "correo@correo.com",
       fecha_nac:new Date()).save()
   
-        estado(inList: ["espera", "aceptado", "rechazado"],blank:false)
-        nivel(inList: ["Basico", "Intermedio", "Avanzado"],blank:false)
-
       new Profesor(usuario:"profe",passwd:"pass", nombres:"Juan", tipo:2, role:"Profesor",
       apellidoPaterno:"Perez", apellidoMaterno:"Hernandez", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Basico").save()
+      fechaDeNacimiento:new Date(), nivel:"Basico", estado: "aceptado").save()
 
       new Profesor(usuario:"profe2",passwd:"pass", nombres:"Pedro", tipo:2, role:"Profesor",
       apellidoPaterno:"Ramirez", apellidoMaterno:"Cruz", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Intermedio").save()
+      fechaDeNacimiento:new Date(), nivel:"Intermedio", estado: "aceptado").save()
   
         new Profesor(usuario:"profe4",passwd:"pass", nombres:"Roberto", tipo:2, role:"Profesor",
       apellidoPaterno:"Ramirez", apellidoMaterno:"Gutierrez", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Avanzado").save()
+      fechaDeNacimiento:new Date(), nivel:"Avanzado", estado: "aceptado").save()
   
         new Profesor(usuario:"profe3",passwd:"pass", nombres:"Jorge", tipo:2, role:"Profesor",
       apellidoPaterno:"Rosas", apellidoMaterno:"Sanchez", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Conversacion").save()
+      fechaDeNacimiento:new Date(), nivel:"Conversacion", estado: "aceptado").save()
   
         new Profesor(usuario:"profe5",passwd:"pass", nombres:"Mariana", tipo:2, role:"Profesor",
       apellidoPaterno:"Valdivia", apellidoMaterno:"Carbonell", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Basico").save()
+      fechaDeNacimiento:new Date(), nivel:"Basico", estado: "aceptado").save()
 
       new Profesor(usuario:"profe6",passwd:"pass", nombres:"Monica", tipo:2, role:"Profesor",
       apellidoPaterno:"Garcia", apellidoMaterno:"Garcia", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Intermedio").save()
+      fechaDeNacimiento:new Date(), nivel:"Intermedio", estado: "aceptado").save()
   
         new Profesor(usuario:"profe7",passwd:"pass", nombres:"Ivonne", tipo:2, role:"Profesor",
       apellidoPaterno:"Sanchez", apellidoMaterno:"Garcia", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Avanzado").save()
+      fechaDeNacimiento:new Date(), nivel:"Avanzado", estado: "aceptado").save()
   
         new Profesor(usuario:"profe8",passwd:"pass", nombres:"Veronica", tipo:2, role:"Profesor",
       apellidoPaterno:"Martinez", apellidoMaterno:"Hernandez", correo: "salmones.20142@gmail.com",
-      fechaDeNacimiento:new Date(), nivel:"Conversacion").save()
+      fechaDeNacimiento:new Date(), nivel:"Conversacion", estado: "aceptado").save()
 
   
         //pdfRenderingService.render()

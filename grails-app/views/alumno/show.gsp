@@ -96,5 +96,14 @@
 				</fieldset>
 			</g:form>
 		</div>
+                
+                <div class="row-fluid">
+                    <div class="span12">
+                      <div class="nav pull-right text-right" style="margin-bottom: 0px;">
+                        <g:solicitudCurso />
+                      </div>
+                    </div>
+                  </div>
+                
 	</body>
 </html>
