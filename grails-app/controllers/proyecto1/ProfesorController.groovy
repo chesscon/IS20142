@@ -10,7 +10,7 @@ class ProfesorController {
   
     def loginService
   
-    def beforeInterceptor = [action:this.&auth, except:["index", "create", "save", "notFound"]]
+    def beforeInterceptor = [action:this.&auth, except:["index", "create", "save", "notFound","nivelesProfesor"]]
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
   
@@ -69,7 +69,7 @@ class ProfesorController {
         respond profesorInstance
     }
     def listaProfesores(){
-        respond Profesor.findAllByEstadoNotEqual('aceptado'), model:[profesorInstanceCount: Profesor.count()]
+        respond Profesor.findAllByEstado('aceptado'), model:[profesorInstanceCount: Profesor.count()]
     }
     /*
      * 
@@ -77,7 +77,7 @@ class ProfesorController {
      * @param nivel - el nivel solicitado 
      */
     def nivelesProfesor() {
-        respond Profesor.findAllByEstadoNotEqual('aceptado'), model:[profesorInstanceCount: Profesor.count()]
+        respond Profesor.findAllByEstado('aceptado'), model:[profesorInstanceCount: Profesor.count()]
     }
   
     def edit(Profesor profesorInstance) {
