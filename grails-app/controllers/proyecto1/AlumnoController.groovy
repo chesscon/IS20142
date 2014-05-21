@@ -9,6 +9,7 @@ import grails.transaction.Transactional
 class AlumnoController {  
   
   def loginService
+  def pdfRenderingService
   
   def beforeInterceptor = [action:this.&auth, except:["index", "create", "save"]]
 
@@ -114,6 +115,28 @@ class AlumnoController {
           '*'{ respond alumnoInstance, [status: OK] }
       }
   }
+  
+  def renderFormPDF(){
+    def formInstance = Alumno.get(params.id)
+    def args = [template:"pdf", model:[form:formInstance]]
+    pdfRenderingService.render(args+[controller:this],response)
+  }
+  
+    def downloadConstanciaPDF() {
+        response.setContentType('APPLICATION/OCTET-STREAM')
+        response.setHeader('Content-Disposition', 'Attachment;Filename="constancia.pdf"')
+        Alumno alum = Alumno.get(session.user.id)
+        println alum
+        new File("constancia.pdf").withOutputStream { outputStream ->
+            pdfRenderingService.render(template: "/layouts/constancia", 
+                model: [alumno: alum], outputStream)
+        }
+        File f = new File("constancia.pdf")
+        //println f.getAbsolutePath()
+        
+        response.outputStream << f.newInputStream()
+        
+    }
 
   @Transactional
   def delete(Alumno alumnoInstance) {

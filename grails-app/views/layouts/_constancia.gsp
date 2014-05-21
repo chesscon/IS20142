@@ -10,7 +10,7 @@
        <br /><br />
        <span style="font-size:25px"><i>La Escuela de Inglés hace constar que el alumno:</i></span>
        <br /><br />
-       <span style="font-size:30px"><b>Alejandro López Pérez</b></span><br/><br/>
+       <span style="font-size:30px"><b>${alumno.nombre} ${alumno.apPaterno} ${alumno.apMaterno}</b></span><br/><br/>
        <span style="font-size:25px"><i>Completó el curso</i></span> <br/><br/>
        <span style="font-size:30px"><b>Avanzado I</b></span> <br/><br/>
        <span style="font-size:20px">Con calificación de <b> 8.00</b></span> <br/><br/><br/><br/>

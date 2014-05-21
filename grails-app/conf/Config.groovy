@@ -25,6 +25,7 @@ grails.mime.types = [ // the first one is the default format
     js:            'text/javascript',
     json:          ['application/json', 'text/json'],
     multipartForm: 'multipart/form-data',
+    pdf: 'application/pdf',
     rss:           'application/rss+xml',
     text:          'text/plain',
     hal:           ['application/hal+json','application/hal+xml'],

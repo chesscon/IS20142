@@ -104,7 +104,7 @@
                         
                         
                         
-                        <p><g:link action="constancia" controller="curso">descargar Constancia</g:link></p>
+                        <p><g:link action="downloadConstanciaPDF" controller="alumno">descargar Constancia</g:link></p>
                       </div>
                     </div>
                   </div>
