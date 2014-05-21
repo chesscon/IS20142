@@ -34,7 +34,7 @@ class ProfesorController {
 
     def create() {
         Profesor profe = new Profesor(params)
-        profesor.tipo = 2
+        profe.tipo = 2
         //println "controller alumno: "
         if (session.userTmp) {
             //println session.userTmp
