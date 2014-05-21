@@ -1,5 +1,18 @@
 <%@ page import="proyecto1.Curso" %>
 
+<script >
+    var frameSrc = "/login";
+
+    $('#openBtn').click(function(){
+        $('#myModal').on('show', function () {
+
+            $('iframe').attr("src",frameSrc);
+
+            });
+        $('#myModal').modal({show:true})
+    });
+</script>
+
 <div id="form-wizard">
   
   <h2 id="firstStep">Elegir Curso</h2>
@@ -24,6 +37,22 @@
             </g:eachError>
         </g:hasErrors>
 
+        <a href="#" class="btn" id="openBtn">Cuestionario de Colocación</a>
+
+            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <h3>Dialog</h3>
+                    </div>
+                    <div class="modal-body">
+                  <iframe src="" style="zoom:0.60" width="99.6%" height="250" frameborder="0">
+                  </iframe>
+                    </div>
+                    <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">OK</button>
+                    </div>
+            </div>
+        
     </div>
     
     <div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'horario', 'error')} required control-group ">

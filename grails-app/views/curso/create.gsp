@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+
 <html>
   <head>
     <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'curso.label', default: 'Curso')}" />
     <title>Inscribir Curso</title>
-    
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'mainJQuerySteps.css')}">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery.steps.css')}">
-    
-    <script src="${resource(dir: 'js', file: 'jquery.steps.js')}"></script>
-    
+
     <style>
       .wizard > .content {
         min-height: 20em !important;
