@@ -55,7 +55,7 @@ default: 'Grado Academico')}" />
                         <g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
                             <g:if test="${profesorInstance.nivel == 'Basico'}">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                    <td><g:link action="show" id="${profesorInstance.id}">
+                                    <td><g:link action="showUser" id="${profesorInstance.id}">
                                             ${fieldValue(bean: profesorInstance, field: "nombres")}
                                         </g:link></td>
                                     <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
@@ -96,7 +96,7 @@ default: 'Grado Academico')}" />
                         <g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
                             <g:if test="${profesorInstance.nivel == 'Intermedio'}">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                    <td><g:link action="show" id="${profesorInstance.id}">
+                                    <td><g:link action="showUser" id="${profesorInstance.id}">
                                             ${fieldValue(bean: profesorInstance, field: "nombres")}
                                         </g:link></td>
                                     <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
@@ -137,7 +137,7 @@ default: 'Grado Academico')}" />
                         <g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
                             <g:if test="${profesorInstance.nivel == 'Avanzado'}">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                    <td><g:link action="show" id="${profesorInstance.id}">
+                                    <td><g:link action="showUser" id="${profesorInstance.id}">
                                             ${fieldValue(bean: profesorInstance, field: "nombres")}
                                         </g:link></td>
                                     <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
@@ -178,7 +178,7 @@ default: 'Grado Academico')}" />
                         <g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
                             <g:if test="${profesorInstance.nivel == 'Conversacion'}">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-                                    <td><g:link action="show" id="${profesorInstance.id}">
+                                    <td><g:link action="showUser" id="${profesorInstance.id}">
                                             ${fieldValue(bean: profesorInstance, field: "nombres")}
                                         </g:link></td>
                                     <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>

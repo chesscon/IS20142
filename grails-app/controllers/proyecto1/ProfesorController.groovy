@@ -10,7 +10,7 @@ class ProfesorController {
   
     def loginService
   
-    def beforeInterceptor = [action:this.&auth, except:["index", "create", "save", "notFound","nivelesProfesor"]]
+    def beforeInterceptor = [action:this.&auth, except:["index", "create", "save", "notFound","nivelesProfesor","showUser"]]
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
   
@@ -32,6 +32,10 @@ class ProfesorController {
         respond profesorInstance
     }
 
+    def showUser(Profesor profesorInstance) {
+        respond profesorInstance
+    }
+    
     def create() {
         Profesor profe = new Profesor(params)
         profe.tipo = 2
