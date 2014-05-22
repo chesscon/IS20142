@@ -50,6 +50,7 @@ DIV para LOGOTIPO y Slogan de la escuela
 </div>-->
 
     <g:render template="/layouts/menu" />
+<!--    <g:loginControlMenu/>-->
 
 <!-- CHESSCON
   MARGEN de separación entre el encabezado (logotipo y menu)

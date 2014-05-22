@@ -39,6 +39,12 @@ class CursoController {
         respond curso
     }
     
+    def createAlum() {
+        Curso curso = new Curso(params)
+        //println "Usuario: " + session.user.usuario
+        respond curso
+    }
+    
     def  findProfesorForCurso() {
         //def curso = Curso.get(params.curso)
         def nivel = params.nivel

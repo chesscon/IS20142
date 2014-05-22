@@ -15,7 +15,7 @@
 
 <div id="form-wizard">
   
-  <h2 id="firstStep">Elegir Curso</h2>
+ 
   <section>
 
     <div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'nivel', 'error')} required control-group">
