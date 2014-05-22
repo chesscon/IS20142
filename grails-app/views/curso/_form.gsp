@@ -1,16 +1,27 @@
 <%@ page import="proyecto1.Curso" %>
 
-<script >
-    var frameSrc = "/login";
-
-    $('#openBtn').click(function(){
-        $('#myModal').on('show', function () {
-
-            $('iframe').attr("src",frameSrc);
-
-            });
-        $('#myModal').modal({show:true})
-    });
+<script type="text/javascript">
+ 
+$(function() {
+        $('a.showPopup').click(function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var horizontalPadding = 15;
+            var verticalPadding = 15;
+            $('<iframe id="site" src="' + this.href + '" />').dialog({
+                title: ($this.attr('title')) ? $this.attr('title') : 'Site',
+                autoOpen: true,
+                modal: true,
+                resizable: false,
+                autoResize: true,
+                overlay: {
+                    opacity: 0.5,
+                    background: "black"
+                }
+            }).css("width", "90%");
+        });
+});
+ 
 </script>
 
 <div id="form-wizard">
@@ -37,7 +48,7 @@
             </g:eachError>
         </g:hasErrors>
 
-        <a href="#" class="btn" id="openBtn">Cuestionario de Colocación</a>
+        <a href="/IS20142/curso/cuestionario" class="btn showPopup" id="openBtn">Cuestionario de Colocación</a>
 
             <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
                     <div class="modal-header">
