@@ -28,6 +28,9 @@ class CursoController {
         params.max = Math.min(max ?: 10, 100)
         respond Curso.list(params), model:[cursoInstanceCount: Curso.count()]
     }
+    
+  def cuestionario() {
+  }
 
     def show(Curso cursoInstance) {
         respond cursoInstance
