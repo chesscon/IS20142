@@ -14,21 +14,21 @@ class AlumnoCursoTagLib {
              switch(curso.estado) {
                  //Solicitud hecha, pero no confirmada por el profesor
                  case 1:
-                     out << """<p>El profesor esta revisando tu solicitud.</p>"""
+                     out << """<a id ="divSiteTitle">El profesor esta revisando tu solicitud.</a>"""
                      break
                      
                  //Solicitud hecha y aceptada por el profesor
                  case 2:
-                     out << """<p>Estas inscrito en el curso de nivel ${curso.nivel}.</p>"""
-                     out << """<p>Cuando apruebes el curso podrás descargar aquí tu constancia.</p>"""
+                     out << """<a id ="divSiteTitle">Estas inscrito en el curso de nivel ${curso.nivel}.</a>"""
+                     out << """<a id ="divSiteTitle">Cuando apruebes el curso podrás descargar aquí tu constancia.</a>"""
                      break
                      
                  //Solicitud hecha y rechazada por el profesor
                  case 3:
-                     out << """<p>Lo sentimos, este profesor no acepto tu solicitud.</p>"""
-                     out << """<p>Pero puedes inscribirte en otros cursos:</p>"""
+                     out << """<a id ="divSiteTitle">Lo sentimos, este profesor no acepto tu solicitud.</a>"""
+                     out << """<a id ="divSiteTitle">Pero puedes inscribirte en otros cursos:</a>"""
                  default:
-                     out << """<p>[${link(action:"create", controller:"curso"){"Inscribirse a curso"}}]</p>"""
+                     out << """<a id ="divSiteTitle">[${link(action:"create", controller:"curso"){"Inscribirse a curso"}}]</a>"""
              }
          } else {
              out << """<a id ="divSiteTitle">No tienes ningun curso inscrito</a>"""
