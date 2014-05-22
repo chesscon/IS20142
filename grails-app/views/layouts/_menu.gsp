@@ -2,6 +2,28 @@
   MENU
   Aquí esta todo lo correspondiente al menú que aparece arriba a la derecha
 -->
+
+<script type="text/javascript">
+ 
+ $(document).ready(function(){
+
+	/* default settings */
+	$('.venobox').venobox(); 
+
+
+	/* open content with custom settings */
+	$('.venobox_custom').venobox({
+		framewidth: '95%',
+		frameheight: '450px',
+		border: '6px',
+		bordercolor: '#ba7c36',
+		numeratio: true,
+		infinigall: true
+	});
+
+});
+</script>
+
 <div class="row-fluid">
     <div class="span9">
         <div id="divMenuRight">
@@ -33,7 +55,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="${createLink(controller: 'alumno')}" class="dropdown-toggle">Conocenos <b ></b></a>
+                          <a class="dropdown-toggle venobox_custom" data-type="iframe" href="/IS20142/curso/cuestionario"><b>Cuestionario para Sugerirte un nivel</b></a>
                             <!--<ul class="dropdown-menu">
                                 <li class="dropdown">
                                     <a href = "${createLink(controller: 'alumno',action: 'create')}">Registrar Alumno</a>    

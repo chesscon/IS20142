@@ -45,7 +45,7 @@
             </g:eachError>
         </g:hasErrors>
 
-        <a class="btn venobox_custom" data-type="iframe" href="/IS20142/curso/cuestionario">open iFrame</a>
+        <a class="btn venobox_custom" data-type="iframe" href="/IS20142/curso/cuestionario">Cuestionario para Sugerirte un nivel</a>
         
     </div>
     

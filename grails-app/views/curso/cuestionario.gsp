@@ -34,7 +34,7 @@
         <h5> Please read the story and SELECT the correct answer.</h5>
     </div>
 
-    <div id="cloze-text" class="large-8 medium-8 columns">
+    <div id="cloze-text" class="large-12 medium-12 columns">
         <p>
             My name is Lori. I work during the day and go
             &nbsp;&nbsp;

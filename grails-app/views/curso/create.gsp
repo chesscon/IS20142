@@ -11,10 +11,6 @@
       }
     </style>
     
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'venobox.css')}">
-    
-    <script src="${resource(dir: 'js', file: 'venobox.min')}"></script>
-    
   </head>
   <body>
     <div id="create-curso" class="content scaffold-create" role="main">

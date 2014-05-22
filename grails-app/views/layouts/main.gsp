@@ -39,6 +39,10 @@
 
 
     <script src="${resource(dir: 'js', file: 'default.js')}" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'venobox.css')}">
+    
+    <script src="${resource(dir: 'js', file: 'venobox.min.js')}"></script>
 
       <g:layoutHead/>
       <g:javascript library="application"/>
