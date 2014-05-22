@@ -29,7 +29,7 @@
            </g:link></td>
           <td>${fieldValue(bean: profesorInstance, field: "apellidoPaterno")}</td>
           <td>${fieldValue(bean: profesorInstance, field: "apellidoMaterno")}</td>
-          <td>${fieldValue(bean: profesorInstance, field: "estado")}</td>
+          <td>${fieldValue(bean: profesorInstance, field: "grado_academico")}</td>
         </tr>
       </g:each>
     </tbody>

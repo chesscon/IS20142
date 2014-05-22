@@ -82,7 +82,7 @@ class ProfesorController {
         respond profesorInstance
     }
     def listaProfesores(){
-        respond Profesor.findAllByEstado('aceptado'), model:[profesorInstanceCount: Profesor.count()]
+        respond Profesor.findAllByNivel('Intermedio'), model:[profesorInstanceCount: Profesor.count()]
     }
     /*
      * 
