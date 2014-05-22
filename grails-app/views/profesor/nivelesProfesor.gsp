@@ -20,7 +20,10 @@
                 <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.css')}" type="text/css">
         <script>
             $(function() {
-            $( "#accordion" ).accordion();
+            $( "#accordion" ).accordion(
+            {active:0}
+            );
+            
             });
         </script>
     </head>
