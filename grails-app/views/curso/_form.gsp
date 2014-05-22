@@ -2,26 +2,23 @@
 
 <script type="text/javascript">
  
-$(function() {
-        $('a.showPopup').click(function(e) {
-            e.preventDefault();
-            var $this = $(this);
-            var horizontalPadding = 15;
-            var verticalPadding = 15;
-            $('<iframe id="site" src="' + this.href + '" />').dialog({
-                title: ($this.attr('title')) ? $this.attr('title') : 'Site',
-                autoOpen: true,
-                modal: true,
-                resizable: false,
-                autoResize: true,
-                overlay: {
-                    opacity: 0.5,
-                    background: "black"
-                }
-            }).css("width", "90%");
-        });
+ $(document).ready(function(){
+
+	/* default settings */
+	$('.venobox').venobox(); 
+
+
+	/* open content with custom settings */
+	$('.venobox_custom').venobox({
+		framewidth: '95%',
+		frameheight: '450px',
+		border: '6px',
+		bordercolor: '#ba7c36',
+		numeratio: true,
+		infinigall: true
+	});
+
 });
- 
 </script>
 
 <div id="form-wizard">
@@ -48,21 +45,7 @@ $(function() {
             </g:eachError>
         </g:hasErrors>
 
-        <a href="/IS20142/curso/cuestionario" class="btn showPopup" id="openBtn">Cuestionario de Colocación</a>
-
-            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
-                    <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">×</button>
-                                    <h3>Dialog</h3>
-                    </div>
-                    <div class="modal-body">
-                  <iframe src="" style="zoom:0.60" width="99.6%" height="250" frameborder="0">
-                  </iframe>
-                    </div>
-                    <div class="modal-footer">
-                            <button class="btn" data-dismiss="modal">OK</button>
-                    </div>
-            </div>
+        <a class="btn venobox_custom" data-type="iframe" href="/IS20142/curso/cuestionario">open iFrame</a>
         
     </div>
     
