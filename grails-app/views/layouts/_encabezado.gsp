@@ -49,7 +49,7 @@ DIV para LOGOTIPO y Slogan de la escuela
   </div>
 </div>-->
 
-   <!-- <g:render template="/layouts/menu" />-->
+ 
     <g:loginControlMenu/>
 
 <!-- CHESSCON
