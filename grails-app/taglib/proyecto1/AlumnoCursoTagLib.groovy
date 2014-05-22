@@ -31,7 +31,7 @@ class AlumnoCursoTagLib {
                      out << """<p>[${link(action:"create", controller:"curso"){"Inscribirse a curso"}}]</p>"""
              }
          } else {
-             out << """<p>[${link(action:"create", controller:"curso"){"Inscribirse a curso"}}]</p>"""
+             out << """<a id ="divSiteTitle">No tienes ningun curso inscrito</a>"""
          }
     } 
   }

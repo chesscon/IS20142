@@ -1,20 +1,22 @@
 
 <%@ page import="proyecto1.Alumno" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
+                <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.css')}" type="text/css">
 		<g:set var="entityName" value="${message(code: 'alumno.label', default: 'Alumno')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
 		<div id="show-alumno" class="content scaffold-show" role="main">
 			<!--<h1><g:message code="default.show.label" args="[entityName]" /></h1>-->
-            <h1>Bienvenido ${alumnoInstance.nombre} ${alumnoInstance.apPaterno} ${alumnoInstance.apMaterno}</h1>
+            <a id ="divSiteTitle">Bienvenido ${alumnoInstance.nombre} ${alumnoInstance.apPaterno} ${alumnoInstance.apMaterno}</a>
 			<g:if test="${flash.message}">
               <h2 style="color: #09F; text-align: center;"><div class="message" role="status">${flash.message}</div></h2>
 			</g:if>
-			<ol class="property-list alumno">
+			<ul class="property-list alumno">
 			
 				<g:if test="${alumnoInstance?.usuario}">
 				<li class="fieldcontain">
@@ -88,7 +90,7 @@
 				</li>
 				</g:if>
 			
-			</ol>
+			</ul>
 			<g:form url="[resource:alumnoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${alumnoInstance}"><g:message code="default.button.edit2.label" default="Actualizar Datos" /></g:link>
@@ -104,7 +106,6 @@
                         
                         
                         
-                        <p><g:link action="downloadConstanciaPDF" controller="alumno">descargar Constancia</g:link></p>
                       </div>
                     </div>
                   </div>
