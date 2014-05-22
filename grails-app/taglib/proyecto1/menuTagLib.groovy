@@ -13,9 +13,9 @@ package proyecto1
 class menuTagLib {
     def loginControlMenu = {
 	if(session.user){
-            render (template:'/layouts/menuAlumno')
+            out << "<g:render template='/layouts/menuAlumno'/>"
         }else{
-            render (template:'/layouts/menu')
+            out << "<g:render template='/layouts/menu'/>" 
         }
     }
 }
