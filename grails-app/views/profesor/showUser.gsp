@@ -85,7 +85,7 @@
             </div>
             <g:form url="[resource:profesorInstance, action:'delete']" method="DELETE">
                 <fieldset class="buttons">
-                    <g:link class="edit" action="edit" resource="${profesorInstance}"><a class="btn btn-large btn-primary" href="#">Inscribir</a></g:link>
+                    <g:link class="edit" action="edit" resource="${profesorInstance}"><h1 class="btn btn-large btn-primary">Inscribir</h1></g:link>
                 </fieldset>
             </g:form>
         </div>
