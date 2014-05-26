@@ -45,10 +45,10 @@
                                 <li class="dropdown">
                                     <a href="${createLink(controller: 'profesor',action:'nivelesProfesor')}" class="dropdown-toggle">Niveles »</a>
                                     <ul class="dropdown-menu sub-menu" style = "display: none;">
-                                        <li><a href="${createLink(controller: 'profesor',action: 'nivelesProfesor')}?&i=0">Básico</a></li>
-                                        <li><a href = "${createLink(controller: 'profesor',action: 'nivelesProfesor')}?&i=1">Medio</a></li>
-                                        <li><a href="${createLink(controller: 'profesor',action: 'nivelesProfesor')}?&i=2">Avanzado</a></li>
-                                        <li><a href="${createLink(controller: 'profesor',action: 'nivelesProfesor')}?&i=3">Comunicación</a></li>
+                                        <li><a href="${createLink(controller: 'profesor',action: 'nivelesProfesor')}?i=0">Básico</a></li>
+                                        <li><a href = "${createLink(controller: 'profesor',action: 'nivelesProfesor')}?i=1">Medio</a></li>
+                                        <li><a href="${createLink(controller: 'profesor',action: 'nivelesProfesor')}?i=2">Avanzado</a></li>
+                                        <li><a href="${createLink(controller: 'profesor',action: 'nivelesProfesor')}?i=3">Comunicación</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="${createLink(controller: 'profesor')}">Horarios</a></li>
