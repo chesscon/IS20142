@@ -17,13 +17,22 @@
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link rel="stylesheet" href="/resources/demos/style.css">
-                <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablas.css')}" type="text/css">
         <script>
+            function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+            });
+            return vars;
+            }
+            var f = getUrlVars()["i"];
+            var a = parseInt(f);
             $(function() {
             $( "#accordion" ).accordion(
-            {active:0}
+            {active:a}
             );
-            
+
             });
         </script>
     </head>
