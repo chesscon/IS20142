@@ -34,7 +34,7 @@ class AlumnoController {
     if (user.usuario == alumnoInstance.usuario ) {
       respond alumnoInstance
     } else {
-      flash.message = "Lo sentimos, solo puedes ver información de tu usuario"
+      //flash.message = "Lo sentimos, solo puedes ver información de tu usuario"
       redirect(controller:"alumno", action:"show", id:user.id)
     }
   }
@@ -75,6 +75,7 @@ class AlumnoController {
       request.withFormat {
           form multipartForm {
               //flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Registro Exitoso de Alumno')])
+              
               flash.message  = "Registro Exitoso de Alumno"
               redirect(controller:"curso", action:"create" )
               //redirect alumnoInstance
@@ -126,10 +127,11 @@ class AlumnoController {
         response.setContentType('APPLICATION/OCTET-STREAM')
         response.setHeader('Content-Disposition', 'Attachment;Filename="constancia.pdf"')
         Alumno alum = Alumno.get(session.user.id)
+        Curso c = Curso.findByEstudiante(alum)
         println alum
         new File("constancia.pdf").withOutputStream { outputStream ->
             pdfRenderingService.render(template: "/layouts/constancia", 
-                model: [alumno: alum], outputStream)
+                model: [curso: c], outputStream)
         }
         File f = new File("constancia.pdf")
         //println f.getAbsolutePath()
@@ -150,8 +152,9 @@ class AlumnoController {
 
       request.withFormat {
           form multipartForm {
-              flash.message = message(code: 'default.deleted.message', args: [message(code: 'Alumno.label', default: 'Alumno'), alumnoInstance.id])
-              redirect action:"index", method:"GET"
+            session.user = null
+            flash.message  = "Se ha dado de baja tu registro del sistema!"
+              redirect uri:"/"
           }
           '*'{ render status: NO_CONTENT }
       }

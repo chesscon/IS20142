@@ -38,20 +38,6 @@
                         <li class="dropdown">
                             <a href="${createLink(controller: 'alumno',action:'downloadConstanciaPDF')}" class="dropdown-toggle">Constancia <b ></b></a>
                         </li>
-<!--<ul class="dropdown-menu">
-                                <li class="dropdown">
-                                    <a href = "${createLink(controller: 'alumno',action: 'create')}">Registrar Alumno</a>    
-                                </li>
-                            </ul>-->
-                        
-<!--
-                        <li class="dropdown">
-                            <a href="${createLink(controller: 'escuela')}" class="dropdown-toggle">Escuela <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href = "${createLink(controller: 'escuela',action: 'createProfesor')}">Lista de Prosores en espera de ser aceptados</a></li>
-                                <li><a href = "${createLink(controller: 'curso',action: 'create')}">Crear Curso</a></li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </div>
             </nav>

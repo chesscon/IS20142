@@ -76,6 +76,7 @@
         </select>
       </div>
     </div>
+    <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
     <g:hasErrors bean="${cursoInstance}" field="profesor">
             <g:eachError bean="${cursoInstance}" var="error" field="profesor">
                 <g:message error="${error}"/>

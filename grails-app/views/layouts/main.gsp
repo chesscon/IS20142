@@ -70,7 +70,7 @@
             -->
         <div id="breadcrumbs2">
           <ol class="breadcrumb">
-            <li>Inicio</li>
+            <li>Inicio /</li>
             <li class="active" style="font-size: 1.5em;"><g:layoutTitle default="-"/></li>
           </ol>
         </div>

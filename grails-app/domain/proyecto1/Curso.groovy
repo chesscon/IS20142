@@ -6,10 +6,14 @@ class Curso {
     Profesor profesor
     Alumno estudiante = null
     int calificacion = 5
-    // estado = 1 => Solicitud hecha, pero no confirmada por el profesor
-    // estado = 2 => Solicitud hecha y aceptada por el profesor
-    // estado = 3 => Solicitud hecha y rechazada por el profesor
+    // estado = 1 => Solicitud realizada, pero no confirmada por el profesor
+    // estado = 2 => Solicitud realizada y aceptada por el profesor
+    // estado = 3 => Solicitud realizada y rechazada por el profesor
+    // estado = 4 => Solicitud realizada y aceptada, pero curso no aprobado
+    // estado = 5 => Solicitud realizada, aceptada y curso aprobado
     int estado = 1
+    // fecha en que el profesor califica al alumno
+    Date fecha = new Date()
     
    //static hasOne = [profesor: Profesor, nivel: String]
    //static belongsTo = Profesor, Alumno

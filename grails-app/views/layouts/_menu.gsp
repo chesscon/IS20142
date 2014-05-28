@@ -2,7 +2,6 @@
   MENU
   Aquí esta todo lo correspondiente al menú que aparece arriba a la derecha
 -->
-
 <script type="text/javascript">
  
  $(document).ready(function(){

@@ -42,9 +42,6 @@
               Ingresa tus datos
             </h2>
               </div>
-              <g:if test="${flash.message}">
-                <div class="message">${flash.message}</div>
-              </g:if>
               <g:form action="authenticate" method="post" >
                 <div class="dialog" style="text-align: right; padding: 10px; margin: 10px;">
                   <table>
