@@ -35,9 +35,9 @@
                         <li class="dropdown">
                             <a href="${createLink(controller: 'curso',action:'createAlum')}" class="dropdown-toggle">Inscribir Curso <b ></b></a>
                         </li>
-                        <li class="dropdown">
+                        <!--<li class="dropdown">
                             <a href="${createLink(controller: 'alumno',action:'downloadConstanciaPDF')}" class="dropdown-toggle">Constancia <b ></b></a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>

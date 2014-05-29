@@ -14,8 +14,8 @@ class AlumnoCursoTagLib {
                  //Solicitud realizada, pero no confirmada por el profesor
                  case 1:
                      out << """<a id ="divSiteTitle1">Has realizado tu solicitud para el curso de nivel ${curso.nivel}.</a><br/>"""
-                     out << """<a id ="divSiteTitle2">El profesor: ${curso.profesor.nombres} ${curso.profesor.apellidoMaterno} esta revisando tu solicitud.</a>"""
-                     out << """<a id ="divSiteTitle3">Y pronto se pondrá en contacto contigo.</a>"""
+                     out << """<a id ="divSiteTitle2" style="font-size: 0.5em;">El profesor: ${curso.profesor.nombres} ${curso.profesor.apellidoMaterno} esta revisando tu solicitud,<br> """
+                     out << """pronto se pondrá en contacto contigo.</a>"""
                      break
                      
                  //Solicitud realizada y aceptada por el profesor

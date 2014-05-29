@@ -75,7 +75,8 @@
                     <li class="fieldcontain">
                         <span id="fecha_nac-label" class="property-label"><g:message code="alumno.fecha_nac.label" default="Fechanac" /></span>
 
-                        <span class="property-value" aria-labelledby="fecha_nac-label"><g:formatDate date="${alumnoInstance?.fecha_nac}" /></span>
+                        <span class="property-value" aria-labelledby="fecha_nac-label">
+                        <g:formatDate format="dd-MM-yyyy" date="${alumnoInstance?.fecha_nac}"/>
 
                     </li>
                 </g:if>
